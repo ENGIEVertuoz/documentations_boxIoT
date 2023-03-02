@@ -4,6 +4,13 @@
 >
 >Como recordatorio si no hay información sobre la actualización, significa que solo se refiere a la actualización de documentación, traducción o texto.
 
+# 20/11/2022
+
+- Añadido soporte de Luna
+- Nuevo cuadro de cambio de nombre modal
+- Activación automática de DNS
+- Nueva interfaz de usuario
+
 # 26/04/2022
 
 - Arreglo del fallo

@@ -4,6 +4,18 @@
 >
 >As a reminder if there is no information on the update, it means that it only concerns the updating of documentation, translation or text
 
+# 01/09/2023
+
+- Support for Debian11
+- Fix import path
+
+
+# 11/27/2020
+
+- General optimizations
+- New presentation of the list of objects
+- Addition of the tag "V4 compatibility"
+
 # 08-09-2019
 
 Support for php 7.3

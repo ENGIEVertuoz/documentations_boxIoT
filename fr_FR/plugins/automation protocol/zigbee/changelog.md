@@ -8,6 +8,25 @@
 >
 >Pour connaitre les nouveaux module compatible il faut aller [la](https://compatibility.jeedom.com/index.php?v=d&p=home&search=&plugin=zigbee) (c'est trié par date d'ajout/modification)
 
+# 26/01/2023
+
+- Correction d'un empechant certain d'ouvrir la fenetre du réseaux zigbee
+
+# 25/01/2023
+
+- Suppression de la partie backup/restore des puces zigbee (le protocole ne le prennant pas en charge c'est trop instable)
+
+# 23/01/2023
+
+- ajout de nouvelles configuration
+- correction de bugs
+
+# 19/10/2022
+
+- Suppression du dossier rustc après l'installation des dépendances pour liberer de la place
+- Amélioration du support de certains module
+- Correction de bugs
+
 # 03/10/2022
 
 - Les versions de zigpy sont maintenant fixée pour eviter des soucis sur l'installation des dépendances

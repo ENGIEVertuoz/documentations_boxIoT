@@ -35,3 +35,17 @@
 # 09/26/2022
 
 - New Timeout parameter between reading register
+
+# 07/10/2022
+
+- New Pre-Recorded Model System
+- ReadMultiRegisters option on commands
+
+# 10/13/2022
+
+- Option Enable/Disable Write Message
+- NbBytes option to determine the division of a register into x bytes
+
+# 01/10/2023
+
+- Fix import packages for python 3.9

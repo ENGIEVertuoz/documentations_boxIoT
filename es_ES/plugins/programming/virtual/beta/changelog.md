@@ -4,6 +4,15 @@
 >
 >Si no hay información sobre la actualización, significa que se trata solo de la actualización de la documentación, la traducción o el texto.
 
+# 15/12/2022
+
+- Se agregó un botón para mostrar/ocultar información de URL de devolución de equipos confidenciales
+- Eliminación del botón de acceso al probador de expresión ahora accesible por **Herramientas > Probador de expresiones**
+
+# 17/10/2022
+
+- Lista de comandos de actualización para Jeedom v4.3
+
 # 24/01/2022
 
 - Optimizaciones V4.2
@@ -56,5 +65,5 @@
 # 21/01/2019
 
 - Corrección de un error en los valores que provocan la actualización de un comando de información
--	Corrección del error al copiar un dispositivo si existe el comando Actualizar.
+- Corrección del error al copiar un dispositivo si existe el comando Actualizar.
 - Adición del probador de expresión

@@ -1,6 +1,88 @@
 # Changelog Jeedom V4.3
 
-## 4.3.0
+## 4.3.15
+
+- Interdiction de la traduction de Jeedom par les navigateurs (évite les erreur type marché.repo.php non trouvé)
+- Optimisation de la fonction de remplacement 
+
+## 4.3.14
+
+- reduction de la charge sur les DNS
+
+## 4.3.13
+
+- Bugfix sur **Outils / Remplacer**.
+
+## 4.3.12
+
+- Optimisation sur les historiques.
+- Bugfix Synthèse en mobile.
+- Bugfix widget shutter en mobile.
+- Bugfix des courbes de tuile avec info binaire.
+
+## 4.3.11
+
+- Autorisation d'une réponse libre dans *ask* si vous mettez * dans le champs des réponses possibles.
+- **Analyse / Historique** : Bugfix sur la comparaison d'historique (bug introduit en 4.3.10).
+- **Synthèse** : L'*Action depuis la synthèse* d'un objet est maintenant supportée sur la version mobile.
+- Correction des historiques lors d'utilisation de fonction d’agrégation.
+- Correction d'un bug sur l'installation d'un plugin par un autre plugin (Ex : mqtt2 installé par zwavejs).
+- Correction d'un bug sur les historique ou la valeur 0 pouvait écraser la valeur précédente.
+
+## 4.3.10
+
+- **Analyse / Historique** : Correction de bugs sur la suppression d'historique.
+- Correction de l'affichage de la valeur dans la fenêtre de configuration d'une commande.
+- Ajout d'informations et de contrôle sur l'outil de remplacement.
+
+## 4.3.9
+
+- Amélioration de l'édition des tuiles.
+- Amélioration de la visibilité des checkboxs sur les thème Dark et Light.
+- Correction de l'empilement des historiques.
+- Optimisation de la gestion du changement d'heure (merci @jpty).
+- Correction de bugs et améliorations.
+
+## 4.3.8
+
+- Correction de bugs.
+- Amélioration de la sécurité des ask lors de l'utilisation de la fonction generateAskResponseLink par les plugins : utilisation d'un token unique (plus d'envoi de la clef api du core) et verrouillage de la réponse uniquement parmi les choix possible.
+- Correction d'un bug empêchant l'installation de Jeedom.
+- Correction d'un bug sur InfluxDB.
+
+
+## 4.3.7
+
+- Correction de bugs (impactant un futur plugin en cours de développement).
+- Correction de bugs d'affichage sur certains widgets en fonction de l'unité.
+- Ajout de la description **source** pour les actions messages (voir [Doc dev](https://doc.jeedom.com/fr_FR/dev/core4.3)).
+
+## 4.3.6
+
+- Suppression de la conversion des unités pour les secondes (s).
+- Suppression du menu de mise à jour OS pour les box Jeedom (les mises à jour OS sont gérées par Jeedom SAS).
+- Correction d'un bug sur la modale de configuration des historiques.
+- Ajout d'une action *changeTheme* pour les scénarios, actions sur valeur, actions pre/post exec : Elle permet de changer le thème de l'interface immédiatement, en dark, light ou l'autre (toggle).
+
+## 4.3.5
+
+- Correction de bugs.
+
+## 4.3.4
+
+- Correction d'un soucis sur les images de fond.
+- Correction d'un bug avec le widget numérique par défaut.
+- Correction d'une erreur d'inclusion avec certains plugins (*nut* par exemple).
+
+## 4.3.3
+
+- Amélioration de la vérification de la version de nodejs/npm.
+
+## 4.3.2
+
+- Correction d'un soucis d'affichage de l'état d'une commande info dans la configuration avancé de la commande si la valeur est 0.
+
+## 4.3.1
 
 ### 4.3 : Pré-requis
 
@@ -9,17 +91,17 @@
 
 ### 4.3 : Nouveautés / Améliorations
 
-- **Outils / Scénarios** : Modale d'édition au ctrl+click dans les champs éditable des blocs/actions.
+- **Outils / Scénarios** : Modale d'édition au ctrl+click dans les champs éditables des blocs/actions.
 - **Outils / Scénarios** : Ajout d'un menu contextuel sur un scénario pour rendre actif/inactif, changer de groupe, changer d'objet parent.
-- **Outils / Objets** : Ajout d'un menu contextuel sur un objet pour gérer la visbilité, changer d'objet parent, et déplacer.
+- **Outils / Objets** : Ajout d'un menu contextuel sur un objet pour gérer la visibilité, changer d'objet parent, et déplacer.
 - **Outils / Remplacer** : Nouvel outil de remplacement d'équipements et commandes.
 - **Analyse / Timeline** : Ajout d'un champ de recherche pour filtrer l'affichage.
-- **Utilisateurs** : Ajout d'un bouton pour copier les droits d'un utilisateur limité vers un autre
+- **Utilisateurs** : Ajout d'un bouton pour copier les droits d'un utilisateur limité vers un autre.
 - **Rapport** : Possibilité de faire des rapports sur la santé de Jeedom.
 - **Rapport** : Possibilité de faire des rapports sur les équipements en alerte.
 - **Mise à jour** : Possibilité de voir depuis Jeedom les packages OS/PIP2/PIP3/NodeJS qui peuvent etre mise à jour et de lancer la mise à jour (attention fonction risquée et en beta).
 - **Commande alerte** : Ajout d'une option pour recevoir un message en cas de fin d'alerte.
-- **Plugins** : possibilité de désactiver l'installation des dépendances par plugin
+- **Plugins** : Possibilité de désactiver l'installation des dépendances par plugin.
 - **Optimisation** : jeeFrontEnd{}, jeephp2js{}, corrections de bugs mineures et optimisations.
 
 ### 4.3 : WebApp
@@ -31,6 +113,19 @@
 
 - **Lib** : Update Font Awesome 5.13.1 vers 5.15.4.
 
+### 4.3 : Notes
+
+- Pour les utilisateurs qui utilisent des menus dans leurs designs sous la forme :
+
+``<a onClick="planHeader_id=15; displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+Il faut maintenant utiliser:
+
+``<a onClick="jeephp2js.planHeader_id=15; jeeFrontEnd.plan.displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+cf [Doc dev](https://doc.jeedom.com/fr_FR/dev/core4.3).
+
+Article du blog [ici](https://blog.jeedom.com/6739-jeedom-4-3/)
 
 # Changelog Jeedom V4.2
 
@@ -171,9 +266,9 @@
 - **Scénario** : Bugfix des copier / coller et undo / redo (réécriture complète).
 - **Scénario** : Ajout des fonctions de calcul ``averageTemporal(commande,période)`` & ``averageTemporalBetween(commande,start,end)`` permettant d'obtenir la moyenne pondérée par la durée sur la période.
 - **Scénario** : Ajout du support des Types Génériques dans les scénarios.
-	- Déclencheur : `#genericType(LIGHT_STATE,#[Salon]#)# > 0`
-	- IF `genericType(LIGHT_STATE,#[Salon]#) > 0`
-	- Action `genericType`
+	- Déclencheur : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0``
+	- IF ``genericType(LIGHT_STATE,#[Salon]#) > 0``
+	- Action ``genericType``
 - **Objets** : Les plugins peuvent maintenant demander des paramètres spécifique propres aux objets.
 - **Utilisateurs** : Les plugins peuvent maintenant demander des paramètres spécifique propres aux utilisateurs.
 - **Utilisateurs** : Possibilité de gérer les profils des différents utilisateurs Jeedom depuis la page de gestion des utilisateurs.

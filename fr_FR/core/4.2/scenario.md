@@ -74,7 +74,7 @@ Dans l’onglet **Général**, on retrouve les paramètres principaux du scénar
 >**IMPORTANT**
 >
 >Le multi lancement marche à la seconde, c'est à dire que si vous avez 2 lancements dans la même seconde sans la case cochée il y aura quand même 2 lancements du scénario (alors qu'il ne devrait pas). De même lors de plusieurs lancements dans la même seconde il se peut que certains lancements perdent les tags. Conclusion il faut ABSOLUMENT éviter de multiples lancements dans la même seconde.
-- **Mode synchrone** : Lance le scénario dans le thread courant au lieu d'un thread dédié. Permet d'augmenter la vitesse de lancement du scénario, mais peut rendre le système instable.
+- **Mode synchrone** : Lance le scénario dans le thread courant au lieu d'un thread dédié. Permet d'augmenter la vitesse de lancement du scénario, mais peut rendre le système instable. Attention a ne surtout pas mettre de scénario complexe ou avec des pauses (sleep) ou wait en synchrone, cela engendre un comportement instable de jeedom et ne pourra être couvert par le support.
 - **Log** : Le type de log souhaité pour le scénario. Vous pouvez couper les logs du scénario ou au contraire le faire apparaître dans Analyse → Temps réel.
 - **Timeline** : Permet de garder un suivi du scénario dans la timeline (voir doc Historique).
 - **Icône** : Permet de choisir une icône pour le scénario en lieu et place de l’icône standard.
@@ -488,7 +488,8 @@ En plus des commandes domotiques, vous avez accès aux actions suivantes :
 - **Supprimer bloc DANS/A programmé** (remove_inat) : Permet de supprimer la programmation de tous les blocs DANS et A du scénario.
 - **Evènement** (event) : Permet de pousser une valeur dans une commande de type information de manière arbitraire.
 - **Tag** (tag) : Permet d'ajouter/modifier un tag (le tag n'existe que pendant l'exécution en cours du scénario à la différence des variables qui survivent à la fin du scénario).
-- **Coloration des icônes du dashboard** (setColoredIcon) : permet d'activer ou non la coloration des icônes sur le Dashboard.
+- **Coloration des icônes du dashboard** (setColoredIcon) : Permet d'activer ou non la coloration des icônes sur le Dashboard.
+- **Changement de thème** (changetheme) : Permet de changer le thème en cours de l'interface en Dark ou Light.
 - **Export historique** (exportHistory) : permet d'exporter l'historique en csv d'une commande sous forme d'un fichier (envoi par mail par exemple). Vous pouvez mettre plusieurs commandes (séparées par des &&). La selection de la période se fait sous la forme :
   - "-1 month" => -1 mois
   - "-1 day midnight" => -1 jour à minuit

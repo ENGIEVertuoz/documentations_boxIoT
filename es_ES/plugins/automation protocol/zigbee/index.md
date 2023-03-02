@@ -3,7 +3,7 @@
 **El complemento Zigbee para Jeedom** se basa en el excelente trabajo realizado en torno a **la biblioteca Zigpy de código abierto** para ofrecer un **compatibilidad general con diferentes hardware Zigbee**. Permite la comunicación con los siguientes controladores Zigbee :
 
 -	**deCONZ (clave Conbee/Conbee 2/Raspbee/Raspbee 2)** : Probado y validado por el equipo de Jeedom. *(No es necesario instalar la aplicación deCONZ)*
--	**EZSP (laboratorios de silicio)** : Probado, validado y recomendado por el equipo de Jeedom.
+-	**EZSP (laboratorios de silicio)** : Probado, validado y recomendado por el equipo de Jeedom (presta atención a la tecla Sonoff que no parece funcionar muy bien).
 -	**XBee** : No probado por el equipo de Jeedom.
 -	**Zigate** : No probado por el equipo.
 -	**ZNP (Texas Instruments)** : No probado por el equipo.
@@ -155,10 +155,6 @@ Se puede acceder a diferentes herramientas que ofrecen una mejor interactividad 
 
 ![Herramientas contrôleur Zigbee](./images/zigbee_controllerTools.png)
 
-## Copia de seguridad / restauración de un controlador
-
-Es posible hacer una copia de seguridad de la red Zigbee desde controladores de tipo EZSP *(Elelabs por ejemplo)* y ZNP. Esta copia de seguridad se puede restaurar en otro controlador del mismo tipo.
-
 >**Importante**
 >
 > En llaves de tipo EZSP *(Elelabs)*, solo es posible realizar una única restauración de copia de seguridad en todos y para todos durante toda la vida útil de la clave.
@@ -275,7 +271,7 @@ Finalmente, e incluso si puede parecer obvio para algunos, te recordamos que las
 
 # Cambio de clave Zigbee
 
-Si para un daemon dado (1, 2 o 3) cambia la clave Zigbee sin restaurar una copia de seguridad de la antigua en la nueva, entonces es necesario borrar los datos a nivel del daemon (botón "Eliminar datos"). Esto no elimina el equipo de Jeedom, solo vacía la base de datos Zigbee del demonio. Tenga en cuenta que esta operación es irreversible
+Si para un demonio determinado (1, 2 o 3) cambia la clave Zigbee, debe eliminar los datos al nivel del demonio ("botón Eliminar datos"). Esto no elimina el equipo de Jeedom, solo vacía la base de datos Zigbee del demonio. Tenga en cuenta que esta operación es irreversible
 
 # FAQ
 
@@ -330,15 +326,8 @@ Si para un daemon dado (1, 2 o 3) cambia la clave Zigbee sin restaurar una copia
 
 >**Tengo un error estándar "base.timeout" al iniciar el daemon en una tecla de tipo EZSP**
 >
->Es posible que la clave esté bloqueada en el modo de cargador de arranque, para salir de ella puede hacer las siguientes líneas (una por una) en la consola del sistema Jeedom (tenga cuidado si no está bajo Jeedom Atlas debe reemplazar /dev/ttyS2 por el puerto de la clave zigbee, ex /dev/ttyUSBX con X un número correspondiente a su configuración):
+>Es posible que la clave esté bloqueada en el modo de cargador de arranque, para salir de ella, puede ir a la configuración del complemento, luego hacer clic en "Actualizar el firmware", seleccionar su tipo de clave (en Smart/Atlas es Elelabs/Popp ), en puerto Zigbee selecciona tu puerto y en firmware selecciona "Corrección bootloader"
 > Importante : esta manipulación solo debe realizarse con teclas de tipo Elelabs, Jeedom Atlas o Jeedom Smart. En cualquier otra llave debes contactar con el fabricante para que te den el procedimiento.
-''''''''
-wgy https://github.com/Elelabs/elelabs-zigbee-ezsp-utility/archive/master.zip -O /tmp/elelabs.zip
-cd /tmp;unzip -o elelabs.zip
-cd /tmp/elelabs-zigbee-ezsp-utility-master;python3 Elelabs_EzspFwUtility.py flash -p /dev/ttyS2 -f /tmp/elelabs-zigbee-ezsp-utility-master/data/EFR32MG13/ELE_MG13_zb_ncp_115200_610_211112.gbl
-cd /tmp/elelabs-zigbee-ezsp-utility-master;python3 Elelabs_EzspFwUtility.py probe -p /dev/ttyS2
-rm -rf /tmp/elelabs-zigbee-ezsp-utility-master
-''''''''
 
 >**No puedo instalar dependencias**
 >

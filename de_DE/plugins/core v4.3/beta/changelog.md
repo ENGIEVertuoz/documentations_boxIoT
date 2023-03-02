@@ -1,6 +1,61 @@
+# Änderungsprotokoll Jeedom V4.4
+
+## 4.4
+
+### 4.4 : Neuigkeiten / Verbesserungen
+
+- **Bildauswahlfenster** : Kontextmenü zum Senden von Bildern und Erstellen, Umbenennen oder Löschen eines Ordners hinzugefügt.
+
 # Änderungsprotokoll Jeedom V4.3
 
-## 4.3.0
+## 4.3.9
+
+- Verbesserte Kachelbearbeitung.
+- Verbesserte Sichtbarkeit von dunklen und hellen Kontrollkästchen.
+- Verlaufsstapelung behoben.
+- Optimierung des Zeitumstellungsmanagements (danke @jpty).
+- Fehlerbehebungen und Verbesserungen.
+
+## 4.3.8
+
+- Bug-Fix.
+- Verbesserte Ask-Sicherheit bei Verwendung der generateAskResponseLink-Funktion durch Plugins : Verwendung eines eindeutigen Tokens (kein Senden des Kern-API-Schlüssels mehr) und Sperren der Antwort nur unter den möglichen Optionen.
+- Es wurde ein Fehler behoben, der die Installation von jeedom verhinderte.
+- Fehler in influxdb behoben.
+
+
+## 4.3.7
+
+- Fehlerbehebungen (die sich auf ein zukünftiges Plugin in der Entwicklung auswirken).
+- Anzeigefehler bei einigen Widgets basierend auf Einheiten behoben.
+- Beschreibung hinzugefügt **Quelle** für Nachrichtenaktionen (vgl [Doc-Entwickler](https://doc.jeedom.com/de_DE/dev/core4.3)).
+
+## 4.3.6
+
+- Einheitenumrechnung für Sekunden (s) entfernt).
+- Entfernung des Betriebssystem-Update-Menüs für Jeedom-Boxen (Betriebssystem-Updates werden von Jeedom SAS verwaltet).
+- Fehler im Verlaufskonfigurationsmodus behoben.
+- Hinzufügen einer Aktion *Thema ändern* für Szenarien, Wertaktionen, Pre-/Post-Exec-Aktionen : Es ermöglicht, das Thema der Benutzeroberfläche sofort zu ändern, in dunkel, hell oder das andere (toggle).
+
+## 4.3.5
+
+- Bug-Fix.
+
+## 4.3.4
+
+- Ein Problem mit Hintergrundbildern wurde behoben.
+- Ein Fehler mit dem Standardnummern-Widget wurde behoben.
+- Einschlussfehler bei einigen Plugins behoben (*Nüsse* zum Beispiel).
+
+## 4.3.3
+
+- Versionsprüfung von nodejs/npm verbessert.
+
+## 4.3.2
+
+- Es wurde ein Problem behoben, bei dem der Status eines Info-Befehls in der erweiterten Konfiguration des Befehls angezeigt wurde, wenn der Wert 0 ist.
+
+## 4.3.1
 
 ### 4.3 : Voraussetzungen
 
@@ -14,12 +69,12 @@
 - **Werkzeuge / Objekte** : Ein Kontextmenü für ein Objekt wurde hinzugefügt, um die Sichtbarkeit zu verwalten, das übergeordnete Objekt zu ändern und es zu verschieben.
 - **Werkzeuge / Ersetzen** : Neues Tool zum Ersetzen von Ausrüstung und Befehlen.
 - **Analyse / Zeitleiste** : Ein Suchfeld hinzugefügt, um die Anzeige zu filtern.
-- **Benutzer** : Eine Schaltfläche hinzugefügt, um die Rechte eines eingeschränkten Benutzers auf einen anderen zu kopieren
+- **Benutzer** : Eine Schaltfläche hinzugefügt, um die Rechte eines eingeschränkten Benutzers auf einen anderen zu kopieren.
 - **Prüfbericht** : Möglichkeit, über die Gesundheit von Jeedom zu berichten.
 - **Prüfbericht** : Möglichkeit, über alarmierte Geräte zu berichten.
 - **Aktualisieren** : Möglichkeit, von Jeedom die OS / PIP2 / PIP3 / NodeJS-Pakete zu sehen, die aktualisiert werden können, und das Update zu starten (Vorsicht, riskante Funktion und in Beta).
 - **Alarmbefehl** : Option hinzugefügt, um eine Nachricht im Falle des Endes des Alarms zu erhalten.
-- **Plugins** : Möglichkeit, die Installation von Abhängigkeiten per Plugin zu deaktivieren
+- **Plugins** : Möglichkeit, die Installation von Abhängigkeiten per Plugin zu deaktivieren.
 - **Optimierung** : jeeFrontEnd{}, jeephp2js{}, kleinere Bugfixes und Optimierungen.
 
 ### 4.3 : WebApp
@@ -31,6 +86,19 @@
 
 - **Lib** : Aktualisieren Sie Font Awesome 5.13.1 bis 5.15.4.
 
+### 4.3 : Notes
+
+- Für Benutzer, die Menüs in ihren Designs im Formular verwenden :
+
+``<a onClick="planHeader_id=15; displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+Sie müssen jetzt verwenden:
+
+``<a onClick="jeephp2js.planHeader_id=15; jeeFrontEnd.plan.displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+sehen [Doc-Entwickler](https://doc.jeedom.com/de_DE/dev/core4.3).
+
+Blogeintrag [Hier](https://blog.jeedom.com/6739-jeedom-4-3/)
 
 # Änderungsprotokoll Jeedom V4.2
 
@@ -169,11 +237,11 @@
 - **Plugins / Management** : Anzeige der Plugin-Kategorie und ein Link zum direkten Öffnen der Seite, ohne das Plugins-Menü aufzurufen.
 - **Szenario** : Code-Fallback-Funktion (*Code falten*) in dem *Codeblöcke*. Tastenkombinationen Strg + Y und Strg + I.
 - **Szenario** : Bugfix kopieren / einfügen und rückgängig machen / wiederholen (vollständiges Umschreiben)).
-- **Szenario** : Berechnungsfunktionen hinzufügen ````averageTemporal(commande,période)```` & ````averageTemporalBetween(commande,start,end)```` Damit kann der nach der Duration über den Zeitraum gewichtete Durchschnitt ermittelt werden.
+- **Szenario** : Berechnungsfunktionen hinzufügen ``averageTemporal(commande,période)`` & ``averageTemporalBetween(commande,start,end)`` Damit kann der nach der Duration über den Zeitraum gewichtete Durchschnitt ermittelt werden.
 - **Szenario** : Unterstützung für generische Typen in Szenarien hinzugefügt.
-	- Abzug : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0`
-	- IF `genericType (LIGHT_STATE .),#[Salon]#) > 0`
-	- `GenericType`-Aktion
+	- Abzug : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0``
+	- WENN ``genericType(LIGHT_STATE,#[Salon]#) > 0``
+	- Aktie ``genericType``
 - **Objekte** : Plugins können jetzt bestimmte objektspezifische Parameter anfordern.
 - **Benutzer** : Plugins können jetzt bestimmte benutzerspezifische Parameter anfordern.
 - **Benutzer** : Möglichkeit zum Verwalten der Profile verschiedener Jeedom-Benutzer auf der Benutzerverwaltungsseite.
@@ -188,7 +256,7 @@
 - **Aufbau** : OSDB-Einstellungen: Hinzufügen eines Tools zur Massenbearbeitung von Geräten, Befehlen, Objekten, Szenarien.
 - **Aufbau** : OSDB-Einstellungen: Hinzufügen eines dynamischen SQL-Abfragekonstruktors.
 - **Aufbau**: Möglichkeit zum Deaktivieren der Cloud-Überwachung (Administration / Updates / Market).
-- **jeeCLI** : Zugabe von ````jeeCli.php```` im core / php-Ordner von Jeedom, um einige Kommandozeilenfunktionen zu verwalten.
+- **jeeCLI** : Zugabe von ``jeeCli.php`` im core / php-Ordner von Jeedom, um einige Kommandozeilenfunktionen zu verwalten.
 - *Große Verbesserungen der Benutzeroberfläche in Bezug auf Leistung / Reaktionsfähigkeit. jeedomUtils {}, jeedomUI {}, Hauptmenü in reinem CSS umgeschrieben, Entfernung von initRowWorflow(), Vereinfachung des Codes, CSS-Fixes für kleine Bildschirme usw.*
 
 ### 4.2 : Kern-Widgets
@@ -213,7 +281,7 @@ Wir haben eine Bestätigung des Cloud-Backup-Passworts hinzugefügt, um Eingabef
 
 - Um die Sicherheit der Jeedom-Lösung deutlich zu erhöhen, wurde das Dateizugriffssystem geändert. Bevor bestimmte Dateien an bestimmten Orten verboten wurden. Ab v4.2, Dateien sind explizit nach Typ und Speicherort erlaubt.
 - Änderung auf API-Ebene, zuvor "tolerant", wenn Sie mit dem Core-Key-Anzeige-Plugin angekommen sind XXXXX. Dies ist nicht mehr der Fall, Sie müssen mit dem dem Plugin entsprechenden Schlüssel anreisen.
-- In der http-API könnten Sie einen Plugin-Namen im Typ angeben, dies ist nicht mehr möglich. Der dem Typ der Anfrage entsprechende Typ (szenario, eqLogic, cmd usw.) muss dem Plugin entsprechen. Zum Beispiel für das virtuelle Plugin, das Sie hatten ````type=virtual```` in der URL muss jetzt ersetzt werden durch ````plugin=virtual&type=event````.
+- In der http-API könnten Sie einen Plugin-Namen im Typ angeben, dies ist nicht mehr möglich. Der dem Typ der Anfrage entsprechende Typ (szenario, eqLogic, cmd usw.) muss dem Plugin entsprechen. Zum Beispiel für das virtuelle Plugin, das Sie hatten ``type=virtual`` in der URL muss jetzt ersetzt werden durch ``plugin=virtual&type=event``.
 - Verstärkung der Sitzungen : Wechseln Sie zu sha256 mit 64 Zeichen im strikten Modus.
 
 Das Jeedom-Team ist sich bewusst, dass diese Änderungen Auswirkungen haben und für Sie peinlich sein können, aber wir können keine Kompromisse bei der Sicherheit eingehen.

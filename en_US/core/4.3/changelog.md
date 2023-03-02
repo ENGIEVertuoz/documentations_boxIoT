@@ -1,6 +1,53 @@
 # Changelog Jeedom V4.3
 
-## 4.3.0
+## 4.3.9
+
+- Improved tile editing.
+- Improved visibility of Dark and Light themed checkboxes.
+- Fixed history stacking.
+- Optimization of time change management (thanks @jpty).
+- Bug fixes and improvements.
+
+## 4.3.8
+
+- Bugfix.
+- Improved ask security when using the generateAskResponseLink function by plugins : use of a unique token (no more sending of the core api key) and locking of the response only among the possible choices.
+- Fixed a bug preventing the installation of jeedom.
+- Fixed a bug on influxdb.
+
+
+## 4.3.7
+
+- Bug fixes (impacting a future plugin under development).
+- Fixed display bugs on some widgets based on unit.
+- Added description **source** for message actions (see [Doc dev](https://doc.jeedom.com/en_US/dev/core4.3)).
+
+## 4.3.6
+
+- Removed unit conversion for seconds (s)).
+- Removal of the OS update menu for Jeedom boxes (OS updates are managed by Jeedom SAS).
+- Fixed a bug on the history configuration modal.
+- Adding an action *changeTheme* for scenarios, value actions, pre/post exec actions : It allows to change the theme of the interface immediately, in dark, light or the other (toggle).
+
+## 4.3.5
+
+- Bugfix.
+
+## 4.3.4
+
+- Fixed an issue with background images.
+- Fixed a bug with the default number widget.
+- Fixed inclusion error with some plugins (*nuts* for example).
+
+## 4.3.3
+
+- Improved nodejs/npm version checking.
+
+## 4.3.2
+
+- Fixed a problem displaying the status of an info command in the advanced configuration of the command if the value is 0.
+
+## 4.3.1
 
 ### 4.3 : Prerequisites
 
@@ -14,12 +61,12 @@
 - **Tools / Objects** : Added a contextual menu on an object to manage visibility, change parent object, and move.
 - **Tools / Replace** : New tool for replacing equipment and commands.
 - **Analysis / Timeline** : Added a search field to filter the display.
-- **Users** : Added a button to copy the rights of a limited user to another
+- **Users** : Added a button to copy the rights of a limited user to another.
 - **Report** : Ability to report on Jeedom health.
 - **Report** : Ability to report on alerted equipment.
 - **Update** : Ability to see from Jeedom the OS / PIP2 / PIP3 / NodeJS packages that can be updated and launch the update (beware risky function and in beta).
 - **Alert command** : Added an option to receive a message in case of end of alert.
-- **Plugins** : possibility to disable the installation of dependencies by plugin
+- **Plugins** : Possibility to disable the installation of dependencies by plugin.
 - **Optimization** : jeeFrontEnd{}, jeephp2js{}, minor bugfixes and optimizations.
 
 ### 4.3 : WebApp
@@ -31,6 +78,19 @@
 
 - **Lib** : Update Font Awesome 5.13.1 to 5.15.4.
 
+### 4.3 : Notes
+
+- For users who use menus in their designs in the form :
+
+``<a onClick="planHeader_id=15; displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+You must now use:
+
+``<a onClick="jeephp2js.planHeader_id=15; jeeFrontEnd.plan.displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+see [Doc dev](https://doc.jeedom.com/en_US/dev/core4.3).
+
+Blog post [here](https://blog.jeedom.com/6739-jeedom-4-3/)
 
 # Changelog Jeedom V4.2
 
@@ -169,11 +229,11 @@
 - **Plugins / Management** : Display of the plugin category, and a link to directly open its page without going through the Plugins menu.
 - **Scenario** : Code fallback function (*folding code*) in the *Code Blocks*. Ctrl + Y and Ctrl + I shortcuts.
 - **Scenario** : Copy / paste and undo / redo bugfix (complete rewrite).
-- **Scenario** : Adding calculation functions ````averageTemporal(commande,période)```` & ````averageTemporalBetween(commande,start,end)```` allowing to obtain the average weighted by the duration over the period.
+- **Scenario** : Adding calculation functions ``averageTemporal(commande,période)`` & ``averageTemporalBetween(commande,start,end)`` allowing to obtain the average weighted by the duration over the period.
 - **Scenario** : Added support for Generic Types in scenarios.
-	- Trigger : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0`
-	- IF `genericType (LIGHT_STATE,#[Salon]#) > 0`
-	- `GenericType` action
+	- Trigger : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0``
+	- IF ``genericType(LIGHT_STATE,#[Salon]#) > 0``
+	- Stock ``genericType``
 - **Objects** : Plugins can now request specific parameters specific to objects.
 - **Users** : Plugins can now request specific parameters specific to users.
 - **Users** : Ability to manage the profiles of different Jeedom users from the user management page.
@@ -188,7 +248,7 @@
 - **Configuration** : OSDB settings: Addition of a tool for mass editing of equipment, commands, objects, scenarios.
 - **Configuration** : OSDB settings: Adding a dynamic SQL query constructor.
 - **Configuration**: Possibility to deactivate cloud monitoring (Administration / Updates / Market).
-- **jeeCLI** : Addition of ````jeeCli.php```` in the core / php folder of Jeedom to manage some command line functions.
+- **jeeCLI** : Addition of ``jeeCli.php`` in the core / php folder of Jeedom to manage some command line functions.
 - *Big improvements to the interface in terms of performance / responsiveness. jeedomUtils {}, jeedomUI {}, main menu rewritten in pure css, removal of initRowWorflow (), simplification of the code, css fixes for small screens, etc.*
 
 ### 4.2 : Core Widgets
@@ -213,7 +273,7 @@ We have added a confirmation of the cloud backup password to prevent entry error
 
 - In order to significantly increase the security of the Jeedom solution, the file access system has changed. Before certain files were prohibited from certain locations. From v4.2, files are explicitly allowed by type and location.
 - Change at the API level, previously "tolerant" if you arrived with the Core key indicating plugin XXXXX. This is no longer the case, you must arrive with the key corresponding to the plugin.
-- In http API you could indicate a plugin name in type, this is no longer possible. The type corresponding to the type of the request (scenario, eqLogic, cmd, etc.) must correspond to the plugin. For example for the virtual plugin you had ````type=virtual```` in the url it is now necessary to replace by ````plugin=virtual&type=event````.
+- In http API you could indicate a plugin name in type, this is no longer possible. The type corresponding to the type of the request (scenario, eqLogic, cmd, etc.) must correspond to the plugin. For example for the virtual plugin you had ``type=virtual`` in the url it is now necessary to replace by ``plugin=virtual&type=event``.
 - Reinforcement of sessions : Change to sha256 with 64 characters in strict mode.
 
 The Jeedom team is well aware that these changes can have an impact and be embarrassing for you, but we cannot compromise on safety.

@@ -1,32 +1,126 @@
+# Changelog Jeedom V4.3
+
+## 4.3.9
+
+- Amélioration de l'édition des tuiles.
+- Amélioration de la visibilité des checkboxs sur les thème Dark et Light.
+- Correction de l'empilement des historiques.
+- Optimisation de la gestion du changement d'heure (merci @jpty).
+- Correction de bugs et améliorations.
+
+## 4.3.8
+
+- Correction de bugs.
+- Amélioration de la sécurité des ask lors de l'utilisation de la fonction generateAskResponseLink par les plugins : utilisation d'un token unique (plus d'envoi de la clef api du core) et verrouillage de la réponse uniquement parmi les choix possible.
+- Correction d'un bug empêchant l'installation de Jeedom.
+- Correction d'un bug sur InfluxDB.
+
+
+## 4.3.7
+
+- Correction de bugs (impactant un futur plugin en cours de développement).
+- Correction de bugs d'affichage sur certains widgets en fonction de l'unité.
+- Ajout de la description **source** pour les actions messages (voir [Doc dev](https://doc.jeedom.com/fr_FR/dev/core4.3)).
+
+## 4.3.6
+
+- Suppression de la conversion des unités pour les secondes (s).
+- Suppression du menu de mise à jour OS pour les box Jeedom (les mises à jour OS sont gérées par Jeedom SAS).
+- Correction d'un bug sur la modale de configuration des historiques.
+- Ajout d'une action *changeTheme* pour les scénarios, actions sur valeur, actions pre/post exec : Elle permet de changer le thème de l'interface immédiatement, en dark, light ou l'autre (toggle).
+
+## 4.3.5
+
+- Correction de bugs.
+
+## 4.3.4
+
+- Correction d'un soucis sur les images de fond.
+- Correction d'un bug avec le widget numérique par défaut.
+- Correction d'une erreur d'inclusion avec certains plugins (*nut* par exemple).
+
+## 4.3.3
+
+- Amélioration de la vérification de la version de nodejs/npm.
+
+## 4.3.2
+
+- Correction d'un soucis d'affichage de l'état d'une commande info dans la configuration avancé de la commande si la valeur est 0.
+
+## 4.3.1
+
+### 4.3 : Pré-requis
+
+- Debian 10 Buster
+- Php 7.3
+
+### 4.3 : Nouveautés / Améliorations
+
+- **Outils / Scénarios** : Modale d'édition au ctrl+click dans les champs éditables des blocs/actions.
+- **Outils / Scénarios** : Ajout d'un menu contextuel sur un scénario pour rendre actif/inactif, changer de groupe, changer d'objet parent.
+- **Outils / Objets** : Ajout d'un menu contextuel sur un objet pour gérer la visibilité, changer d'objet parent, et déplacer.
+- **Outils / Remplacer** : Nouvel outil de remplacement d'équipements et commandes.
+- **Analyse / Timeline** : Ajout d'un champ de recherche pour filtrer l'affichage.
+- **Utilisateurs** : Ajout d'un bouton pour copier les droits d'un utilisateur limité vers un autre.
+- **Rapport** : Possibilité de faire des rapports sur la santé de Jeedom.
+- **Rapport** : Possibilité de faire des rapports sur les équipements en alerte.
+- **Mise à jour** : Possibilité de voir depuis Jeedom les packages OS/PIP2/PIP3/NodeJS qui peuvent etre mise à jour et de lancer la mise à jour (attention fonction risquée et en beta).
+- **Commande alerte** : Ajout d'une option pour recevoir un message en cas de fin d'alerte.
+- **Plugins** : Possibilité de désactiver l'installation des dépendances par plugin.
+- **Optimisation** : jeeFrontEnd{}, jeephp2js{}, corrections de bugs mineures et optimisations.
+
+### 4.3 : WebApp
+
+- Intégration des Notes.
+- Possibilité d'afficher les tuiles que sur une colonne (réglage dans la configuration de jeedom onglet interface).
+
+### 4.3 : Autre
+
+- **Lib** : Update Font Awesome 5.13.1 vers 5.15.4.
+
+### 4.3 : Notes
+
+- Pour les utilisateurs qui utilisent des menus dans leurs designs sous la forme :
+
+``<a onClick="planHeader_id=15; displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+Il faut maintenant utiliser:
+
+``<a onClick="jeephp2js.planHeader_id=15; jeeFrontEnd.plan.displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+cf [Doc dev](https://doc.jeedom.com/fr_FR/dev/core4.3).
+
+Article du blog [ici](https://blog.jeedom.com/6739-jeedom-4-3/)
+
 # Changelog Jeedom V4.2
 
 ## 4.2.21
 
-- Correction d'un bug sur les résumés
+- Correction d'un bug sur les résumés.
 
 ## 4.2.20
 
-- Ajout d'un ssyteme de correction des packages pip lors d'une mauvaise installation
+- Ajout d'un ssyteme de correction des packages pip lors d'une mauvaise installation.
 
 ## 4.2.19
 
-- Ajout de la gestion des version pour les packages python (permet de corriger le soucis avec le plugin zigbee)
+- Ajout de la gestion des version pour les packages python (permet de corriger le soucis avec le plugin zigbee).
 
 ## 4.2.18
 
-- Mise à jour de nodejs
+- Mise à jour de nodejs.
 
 ## 4.2.17
 
 - Bugfix Core : Accès utilisateur limité aux designs et vues.
 - Bugfix UI : Affichage des blocs A sous Chrome.
-- Bugfix : lien vers la documentation lorsque le plugin est en beta
+- Bugfix : Lien vers la documentation lorsque le plugin est en beta.
 
 ## 4.2.16
 
 - Bugfix Core : Scénario : Fusion des éléments collés dans certains cas.
 - Bugfix Core : Création d'archive avec l'éditeur de fichiers.
-- Bugfix : augmentation du délai pour le contact du service de monitoring (permet d'alléger la charge sur les serveurs cloud).
+- Bugfix : Augmentation du délai pour le contact du service de monitoring (permet d'alléger la charge sur les serveurs cloud).
 
 ## 4.2.15
 
@@ -45,11 +139,13 @@
 
 ## 4.2.13
 
-- Amélioration : Création des clef api par defaut en inactif (si la demande de création ne vient pas du plugin).
-- Amélioration : Ajout de la taille des sauvegardes sur la page de gestion des sauvegardes
-- Bugfix Core : Correction d'un soucis de taille de backup avec le plugin Atlas
 - Bugfix UI : Option *Masquer en desktop* des résumés.
 - Bugfix UI : Historiques: Respect des échelles lors du zoom.
+
+- Bugfix Core : Correction d'un soucis de taille de backup avec le plugin Atlas.
+
+- Amélioration : Création des clef api par defaut en inactif (si la demande de création ne vient pas du plugin).
+- Amélioration : Ajout de la taille des sauvegardes sur la page de gestion des sauvegardes.
 
 ## 4.2.12
 
@@ -135,9 +231,9 @@
 - **Scénario** : Bugfix des copier / coller et undo / redo (réécriture complète).
 - **Scénario** : Ajout des fonctions de calcul ``averageTemporal(commande,période)`` & ``averageTemporalBetween(commande,start,end)`` permettant d'obtenir la moyenne pondérée par la durée sur la période.
 - **Scénario** : Ajout du support des Types Génériques dans les scénarios.
-	- Déclencheur : `#genericType(LIGHT_STATE,#[Salon]#)# > 0`
-	- IF `genericType(LIGHT_STATE,#[Salon]#) > 0`
-	- Action `genericType`
+	- Déclencheur : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0``
+	- IF ``genericType(LIGHT_STATE,#[Salon]#) > 0``
+	- Action ``genericType``
 - **Objets** : Les plugins peuvent maintenant demander des paramètres spécifique propres aux objets.
 - **Utilisateurs** : Les plugins peuvent maintenant demander des paramètres spécifique propres aux utilisateurs.
 - **Utilisateurs** : Possibilité de gérer les profils des différents utilisateurs Jeedom depuis la page de gestion des utilisateurs.

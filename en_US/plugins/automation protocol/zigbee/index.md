@@ -3,7 +3,7 @@
 **The Zigbee plugin for Jeedom** builds on the excellent work done around **the open-source Zigpy library** to offer a **general compatibility with different Zigbee hardware**. It allows communication with the following Zigbee controllers :
 
 -	**deCONZ (Conbee key/Conbee 2/Raspbee/Raspbee 2)** : Tested and validated by the Jeedom team. *(It is not necessary to install the deCONZ application)*
--	**EZSP (Silicon Labs)** : Tested, validated and recommended by the Jeedom team.
+-	**EZSP (Silicon Labs)** : Tested, validated and recommended by the Jeedom team (pay attention to the Sonoff key which does not seem to work very well).
 -	**XBee** : Not tested by the Jeedom team.
 -	**Zigate** : Not tested by the team.
 -	**ZNP (Texas Instruments)** : Not tested by the team.
@@ -155,10 +155,6 @@ Different tools offering better interactivity with its Zigbee network are access
 
 ![Tools contrôleur Zigbee](./images/zigbee_controllerTools.png)
 
-## Backup / Restore a Controller
-
-It is possible to make a backup of the Zigbee network from EZSP type controllers *(Elelabs for example)* and ZNP. This backup can be restored to another controller of the same type.
-
 >**Important**
 >
 > On EZSP type keys *(Elelabs)*, it is only possible to carry out a single backup restore in all and for all during the entire life of the key.
@@ -275,7 +271,7 @@ Finally, and even if it may seem obvious to some, we remind you that Zigbee gate
 
 # Zigbee key change
 
-If for a given daemon (1, 2 or 3) you change the Zigbee key without restoring a backup of the old one on the new one then it is necessary to delete the data at the level of the daemon (button "Delete data"). This does not delete Jeedom's equipment, it just empties the demon's Zigbee database. Please note this operation is irreversible
+If for a given demon (1,2 or 3) you change the Zigbee key then you must delete the data at the level of the demon ("Delete data button"). This does not delete Jeedom's equipment, it just empties the demon's Zigbee database. Please note this operation is irreversible
 
 # FAQ
 
@@ -330,15 +326,8 @@ If for a given daemon (1, 2 or 3) you change the Zigbee key without restoring a 
 
 >**I have a standard error "base.timeout" when starting the daemon on an EZSP type key**
 >
->It is possible that the key is blocked in bootloader mode, to get out of it you can do the following lines (one by one) in the Jeedom system console (be careful if you are not under Jeedom Atlas you must replace /dev/ttyS2 by the port of the zigbee key, ex /dev/ttyUSBX with X a number corresponding to your configuration):
+>It is possible that the key is blocked in bootloader mode, to get out of it you can go to the configuration of the plugin then click on "Update the firmware", select your type of key (on Smart/Atlas it is Elelabs/Popp ), in Zigbee port select your port and in firmware select "Correction bootloader"
 > Important : this manipulation should only be done with Elelabs, Jeedom Atlas or Jeedom Smart type keys. On any other key you must contact the manufacturer to give you the procedure.
-````````
-wgand https://github.com/Elelabs/elelabs-zigbee-ezsp-utility/archive/master.zip -O /tmp/elelabs.zip
-cd /tmp;unzip -o elelabs.zip
-cd /tmp/elelabs-zigbee-ezsp-utility-master;python3 Elelabs_EzspFwUtility.py flash -p /dev/ttyS2 -f /tmp/elelabs-zigbee-ezsp-utility-master/data/EFR32MG13/ELE_MG13_zb_ncp_115200_610_211112.gbl
-cd /tmp/elelabs-zigbee-ezsp-utility-master;python3 Elelabs_EzspFwUtility.py probe -p /dev/ttyS2
-rm -rf /tmp/elelabs-zigbee-ezsp-utility-master
-````````
 
 >**I can't install dependencies**
 >

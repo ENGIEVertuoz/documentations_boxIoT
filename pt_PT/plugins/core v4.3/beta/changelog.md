@@ -1,6 +1,61 @@
+# Changelog Jeedom V4.4
+
+## 4.4
+
+### 4.4 : Notícias / Melhorias
+
+- **Janela de seleção de imagem** : Adicionado um menu de contexto para enviar imagens e criar, renomear ou excluir uma pasta.
+
 # Changelog Jeedom V4.3
 
-## 4.3.0
+## 4.3.9
+
+- Edição de blocos aprimorada.
+- Visibilidade aprimorada das caixas de seleção temáticas Escuro e Claro.
+- Corrigido o empilhamento de histórico.
+- Otimização do gerenciamento de mudança de tempo (obrigado @jpty).
+- Correções de bugs e melhorias.
+
+## 4.3.8
+
+- Bugfix.
+- Segurança de perguntas aprimorada ao usar a função generateAskResponseLink por plugins : uso de um token exclusivo (não há mais envio da chave da API principal) e bloqueio da resposta apenas entre as opções possíveis.
+- Corrigido um bug que impedia a instalação do jeedom.
+- Corrigido um bug no influxdb.
+
+
+## 4.3.7
+
+- Correções de bugs (afetando um futuro plugin em desenvolvimento).
+- Corrigidos erros de exibição em alguns widgets com base na unidade.
+- Descrição adicionada **fonte** para ações de mensagem (consulte [Desenvolvedor de documentos](https://doc.jeedom.com/pt_PT/dev/core4.3)).
+
+## 4.3.6
+
+- Conversão de unidade removida por segundos (s)).
+- Remoção do menu de atualização do sistema operacional para caixas Jeedom (as atualizações do sistema operacional são gerenciadas pelo Jeedom SAS).
+- Corrigido um bug no modal de configuração do histórico.
+- Adicionando uma ação *Mudar tema* para cenários, ações de valor, ações pré/pós exec : Permite alterar o tema da interface imediatamente, no escuro, claro ou outro (alternar).
+
+## 4.3.5
+
+- Bugfix.
+
+## 4.3.4
+
+- Corrigido um problema com imagens de fundo.
+- Corrigido um bug com o widget de número padrão.
+- Corrigido erro de inclusão com alguns plugins (*nozes* por exemplo).
+
+## 4.3.3
+
+- Verificação de versão nodejs/npm aprimorada.
+
+## 4.3.2
+
+- Corrigido um problema ao exibir o status de um comando info na configuração avançada do comando se o valor for 0.
+
+## 4.3.1
 
 ### 4.3 : Pré-requisitos
 
@@ -14,12 +69,12 @@
 - **Ferramentas / Objetos** : Adicionado um menu contextual em um objeto para gerenciar a visibilidade, alterar o objeto pai e mover.
 - **Ferramentas / Substituir** : Nova ferramenta para substituição de equipamentos e comandos.
 - **Análise / Cronograma** : Adicionado um campo de pesquisa para filtrar a exibição.
-- **Comercial** : Adicionado um botão para copiar os direitos de um usuário limitado para outro
+- **Comercial** : Adicionado um botão para copiar os direitos de um usuário limitado para outro.
 - **Relatório** : Capacidade de relatar sobre a saúde de Jeedom.
 - **Relatório** : Capacidade de relatar equipamentos alertados.
 - **Atualizar** : Capacidade de ver do Jeedom os pacotes OS / PIP2 / PIP3 / NodeJS que podem ser atualizados e iniciar a atualização (cuidado com a função arriscada e em beta).
 - **Comando de alerta** : Adicionada uma opção para receber uma mensagem em caso de fim de alerta.
-- **Plug-ins** : possibilidade de desabilitar a instalação de dependências por plugin
+- **Plug-ins** : Possibilidade de desabilitar a instalação de dependências por plugin.
 - **Otimização** : jeeFrontEnd{}, jeephp2js{}, pequenas correções de bugs e otimizações.
 
 ### 4.3 : WebApp
@@ -31,6 +86,19 @@
 
 - **Livre** : Atualizar fonte impressionante 5.13.1 a 5.15.4.
 
+### 4.3 : Notes
+
+- Para usuários que usam menus em seus designs no formulário :
+
+``<a onClick="planHeader_id=15; displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+Você deve agora usar:
+
+``<a onClick="jeephp2js.planHeader_id=15; jeeFrontEnd.plan.displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+Vejo [Desenvolvedor de documentos](https://doc.jeedom.com/pt_PT/dev/core4.3).
+
+Postagem do blog [aqui](https://blog.jeedom.com/6739-jeedom-4-3/)
 
 # Changelog Jeedom V4.2
 
@@ -169,11 +237,11 @@
 - **Plugins / Gerenciamento** : Exibição da categoria do plugin e um link para abrir diretamente sua página sem passar pelo menu Plugins.
 - **Cenas** : Função de fallback de código (*dobradura de código*) no *Blocos de Código*. Atalhos Ctrl + Y e Ctrl + I.
 - **Cenas** : Copiar / colar e desfazer / refazer correção de bug (reescrita completa).
-- **Cenas** : Adicionando funções de cálculo ````averageTemporal(commande,période)```` E ````averageTemporalBetween(commande,start,end)```` permitindo obter a média ponderada pela duração ao longo do período.
+- **Cenas** : Adicionando funções de cálculo ``averageTemporal(commande,période)`` E ``averageTemporalBetween(commande,start,end)`` permitindo obter a média ponderada pela duração ao longo do período.
 - **Cenas** : Adicionado suporte para tipos genéricos em cenários.
-	- Desencadear : ``#genericType(LIGHT_STATE,#[Salão]#)# > 0`
-	- IF `genericType (LIGHT_STATE,#[Salão]#) > 0`
-	- Ação `GenericType`
+	- Desencadear : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0``
+	- E SE ``genericType(LIGHT_STATE,#[Salon]#) > 0``
+	- Ações ``genericType``
 - **Objetos** : Plugins agora podem solicitar parâmetros específicos para objetos.
 - **Comercial** : Plugins agora podem solicitar parâmetros específicos para usuários.
 - **Comercial** : Capacidade de gerenciar os perfis de diferentes usuários Jeedom a partir da página de gerenciamento de usuários.
@@ -188,7 +256,7 @@
 - **Configuração** : Configurações OSDB: Adição de uma ferramenta para edição em massa de equipamentos, comandos, objetos, cenários.
 - **Configuração** : Configurações OSDB: Adicionar um construtor de consulta SQL dinâmica.
 - **Configuração**: Possibilidade de desativar o monitoramento de nuvem (Administração / Atualizações / Mercado).
-- **jeeCLI** : Adição de ````jeeCli.php```` na pasta core / php do Jeedom para gerenciar algumas funções de linha de comando.
+- **jeeCLI** : Adição de ``jeeCli.php`` na pasta core / php do Jeedom para gerenciar algumas funções de linha de comando.
 - *Grandes melhorias na interface em termos de desempenho / capacidade de resposta. jeedomUtils {}, jeedomUI {}, menu principal reescrito em css puro, remoção de initRowWorflow (), simplificação do código, correções de css para telas pequenas, etc.*
 
 ### 4.2 : Widgets principais
@@ -213,7 +281,7 @@ Adicionamos uma confirmação da senha do backup na nuvem para evitar erros de e
 
 - Para aumentar significativamente a segurança da solução Jeedom, o sistema de acesso a arquivos mudou. Antes de certos arquivos serem proibidos em certos locais. De v4.2, os arquivos são explicitamente permitidos por tipo e localização.
 - Mudança no nível da API, anteriormente "tolerante" se você chegou com a chave do núcleo indicando o plugin XXXXX. Este não é mais o caso, você deve chegar com a chave correspondente ao plugin.
-- Na API http, você pode indicar um nome de plugin em tipo, isso não é mais possível. O tipo correspondente ao tipo de solicitação (cenário, eqLogic, cmd, etc.) deve corresponder ao plugin. Por exemplo, para o plugin virtual que você tinha ````type=virtual```` no url, agora é necessário substituir por ````plugin=virtualEtype=event````.
+- Na API http, você pode indicar um nome de plugin em tipo, isso não é mais possível. O tipo correspondente ao tipo de solicitação (cenário, eqLogic, cmd, etc.) deve corresponder ao plugin. Por exemplo, para o plugin virtual que você tinha ``type=virtual`` no url, agora é necessário substituir por ``plugin=virtualEtype=event``.
 - Reforço de sessões : Mude para sha256 com 64 caracteres em modo estrito.
 
 A equipe da Jeedom está ciente de que essas mudanças podem ter um impacto e ser embaraçosas para você, mas não podemos comprometer a segurança.

@@ -17,7 +17,7 @@
         "Grâce aux Service Pack Power ou Ultimate, votre Jeedom est accessible en HTTPS": "Grâce aux Service Pack Power ou Ultimate, votre Jeedom est accessible en HTTPS",
         "Si vous disposez d'un Service Pack Community, vous devez installer vous même un certificat SSL émis par une autorité de certification (ex": "Si vous disposez d'un Service Pack Community, vous devez installer vous même un certificat SSL émis par une autorité de certification (ex",
         "Let's Encrypt": "Let's Encrypt",
-        "Attetion du a une contrainte de notre prestataire (OVH) le service ne marche que en ipv4 il n'est donc pas compatible ipv6": "Attetion du a une contrainte de notre prestataire (OVH) le service ne marche que en ipv4 il n'est donc pas compatible ipv6"
+        "Attention, du a une contrainte de notre prestataire (OVH) le service ne marche qu'en ipv4 il n'est donc pas compatible ipv6": "Attention, du a une contrainte de notre prestataire (OVH) le service ne marche qu'en ipv4 il n'est donc pas compatible ipv6"
     },
     "howto\/backup_cloud.md": {
         "Sauvegarde cloud": "Sauvegarde cloud",
@@ -106,17 +106,24 @@
     },
     "howto\/jeedom.mise_a_jour_manuel.md": {
         "Mise à jour en ligne de commande de jeedom": "Mise à jour en ligne de commande de jeedom",
-        "Nous allons voir ici comment faire une mise à jour manuellement sur": "Nous allons voir ici comment faire une mise à jour manuellement sur",
+        "si vous ne pouvez plus accéder à l'interface par exemple": "si vous ne pouvez plus accéder à l'interface par exemple",
+        "Nous allons voir comment mettre à jour manuellement votre Jeedom": "Nous allons voir comment mettre à jour manuellement votre Jeedom",
         "Prérequis": "Prérequis",
         "savoir se connecter en SSH à Jeedom": "savoir se connecter en SSH à Jeedom",
-        "connaître les identifiants SSH (voir documentation d'installation": "connaître les identifiants SSH (voir documentation d'installation",
+        "voir documentation d'installation": "voir documentation d'installation",
+        "connaître les identifiants SSH": "connaître les identifiants SSH",
         "avoir un accès Internet depuis la box Jeedom": "avoir un accès Internet depuis la box Jeedom",
         "Important": "Important",
-        "Pensez bien à faire et exporter une sauvegarde avant toute mise à jour manuelle": "Pensez bien à faire et exporter une sauvegarde avant toute mise à jour manuelle",
+        "Pensez bien à exporter la sauvegarde Jeedom fonctionnelle la plus récente en dehors de la box avant toute mise à jour manuelle": "Pensez bien à exporter la sauvegarde Jeedom fonctionnelle la plus récente en dehors de la box avant toute mise à jour manuelle",
         "Téléchargement et décompression": "Téléchargement et décompression",
         "En SSH, faites": "En SSH, faites",
-        "Mise à jour": "Mise à jour",
-        "Toujours en SSH": "Toujours en SSH",
+        "bash": "bash",
+        "su": "su",
+        "cd \/root": "cd \/root",
+        "unzip V4-stable.zip": "unzip V4-stable.zip",
+        "cp -R core-4-stable\/* \/var\/www\/html": "cp -R core-4-stable\/* \/var\/www\/html",
+        "cp -R core-4-stable\/.[^": "cp -R core-4-stable\/.[^",
+        "\/var\/www\/html": "\/var\/www\/html",
         "Si votre installation de Jeedom est un peu ancienne, il faut remplacer tous les": "Si votre installation de Jeedom est un peu ancienne, il faut remplacer tous les",
         "par": "par"
     },
@@ -685,15 +692,15 @@
         "Description": "Description",
         "C'est un service Jeedom SAS payant qui vous permet d'envoyer des SMS et de passer des appels (avec message lu par un robot) depuis votre Jeedom": "C'est un service Jeedom SAS payant qui vous permet d'envoyer des SMS et de passer des appels (avec message lu par un robot) depuis votre Jeedom",
         "Un exemple simple est": "Un exemple simple est",
-        "en cas de déclenchement de l'alarme alors je recois un appels avec une voix qui indique par exemple la zone ou l'alarme est déclencher": "en cas de déclenchement de l'alarme alors je recois un appels avec une voix qui indique par exemple la zone ou l'alarme est déclencher",
-        "On peut faire de meme avec un SMS": "On peut faire de meme avec un SMS",
+        "en cas de déclenchement de l'alarme alors je reçois un appel avec une voix qui indique par exemple la zone où l'alarme est déclenchée": "en cas de déclenchement de l'alarme alors je reçois un appel avec une voix qui indique par exemple la zone où l'alarme est déclenchée",
+        "On peut faire de même avec un SMS": "On peut faire de même avec un SMS",
         "IMPORTANT": "IMPORTANT",
         "Ce service passe par internet, si vous n'avez plus internet alors il n'est plus fonctionnel": "Ce service passe par internet, si vous n'avez plus internet alors il n'est plus fonctionnel",
         "Comment l'utiliser": "Comment l'utiliser",
         "C'est très simple il faut": "C'est très simple il faut",
         "avoir du crédit SMS": "avoir du crédit SMS",
-        "SMS = 1 crédit (limité à 140 caractères), appels = 2 crédits (limité à 450 caractères": "SMS = 1 crédit (limité à 140 caractères), appels = 2 crédits (limité à 450 caractères",
+        "SMS = 1 crédit (limité à 140 caractères), appel = 2 crédits (limité à 450 caractères": "SMS = 1 crédit (limité à 140 caractères), appel = 2 crédits (limité à 450 caractères",
         "ici": "ici",
-        "avoir le plugin phonemarket, d'installer et configuré, documentation": "avoir le plugin phonemarket, d'installer et configuré, documentation"
+        "avoir le plugin phonemarket, d'installer et configurer, documentation": "avoir le plugin phonemarket, d'installer et configurer, documentation"
     }
 }

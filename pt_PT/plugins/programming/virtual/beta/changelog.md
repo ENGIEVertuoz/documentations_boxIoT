@@ -4,6 +4,15 @@
 >
 >Se não houver informação sobre a atualização, significa que se trata apenas da atualização da documentação, tradução ou texto.
 
+# 15/12/2022
+
+- Adicionado um botão para mostrar/ocultar informações de URL de retorno de equipamento sensível
+- Remoção do botão de acesso ao testador de expressão agora acessível por **Ferramentas > Testador de expressões**
+
+# 17/10/2022
+
+- Atualizar lista de comandos para Jeedom v4.3
+
 # 24/01/2022
 
 - Otimizações da V4.2
@@ -56,5 +65,5 @@
 # 21/01/2019
 
 - Correção de um bug nos valores que acionam a atualização de um comando info
--	Correção do erro ao copiar um dispositivo se o comando Atualizar existir.
+- Correção do erro ao copiar um dispositivo se o comando Atualizar existir.
 - Adição do testador de expressão

@@ -55,10 +55,17 @@ Die Registerkarte Payload ist sehr wichtig :
 
 Sobald Sie fertig sind, können Sie speichern. Danach werden die Befehle für Ihr Gerät aktualisiert, wenn Sie das nächste Mal einen Frame erhalten
 
+# Envoyer des commandes
+
+Certains modules Lorawan possèdent des commandes de type Action qui permettent d'envoyer des consignes aux modules via l'interface Jeedom.
+
+Dans l'onglet Equipement du plugin LoraPayload :
+
+- Vous devez choisir la commande d'envoi (que ce soit MQTT ou autres)
+- Vous devez choisir si voulez avoir une confirmation (Ack). C'est une information remontée dans MQTT sur un topic dédié qui n'influence pas les données remontées.
+
+Concernant la commande d'envoi, dans le cas d'utilisation de MQTT, c'est une commande dans MQTT de type Action et de sous-type Message. Le topic est le topic dédié aux downlinks et la valeur de la commande est #message#.
 
 # FAQ
 
 -   Einige Befehle werden nicht gleichzeitig mit anderen aktualisiert : Ja, einige Lorawan-Module senden nicht unbedingt alle Informationen gleichzeitig und mit der gleichen Häufigkeit
-
-
-

@@ -4,6 +4,15 @@
 >
 >If there is no information on the update, it means that it concerns only the update of documentation, translation or text.
 
+# 12/15/2022
+
+- Added a button to show/hide sensitive equipment return url information
+- Removal of the access button to the expression tester now accessible by **Tools > Expression Tester**
+
+# 10/17/2022
+
+- Update command list for Jeedom v4.3
+
 # 01/24/2022
 
 - V4.2 optimizations
@@ -56,5 +65,5 @@
 # 01/21/2019
 
 - Correction of a bug on the values triggering the update of an info command
--	Correction of the error when copying a device if the Refresh command exists.
+- Correction of the error when copying a device if the Refresh command exists.
 - Addition of the expression tester

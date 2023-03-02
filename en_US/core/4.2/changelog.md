@@ -1,12 +1,151 @@
+# Changelog Jeedom V4.3
+
+## 4.3.9
+
+- Improved tile editing.
+- Improved visibility of Dark and Light themed checkboxes.
+- Fixed history stacking.
+- Optimization of time change management (thanks @jpty).
+- Bug fixes and improvements.
+
+## 4.3.8
+
+- Bugfix.
+- Improved ask security when using the generateAskResponseLink function by plugins : use of a unique token (no more sending of the core api key) and locking of the response only among the possible choices.
+- Fixed a bug preventing the installation of jeedom.
+- Fixed a bug on influxdb.
+
+
+## 4.3.7
+
+- Bug fixes (impacting a future plugin under development).
+- Fixed display bugs on some widgets based on unit.
+- Added description **source** for message actions (see [Doc dev](https://doc.jeedom.com/en_US/dev/core4.3)).
+
+## 4.3.6
+
+- Removed unit conversion for seconds (s)).
+- Removal of the OS update menu for Jeedom boxes (OS updates are managed by Jeedom SAS).
+- Fixed a bug on the history configuration modal.
+- Adding an action *changeTheme* for scenarios, value actions, pre/post exec actions : It allows to change the theme of the interface immediately, in dark, light or the other (toggle).
+
+## 4.3.5
+
+- Bugfix.
+
+## 4.3.4
+
+- Fixed an issue with background images.
+- Fixed a bug with the default number widget.
+- Fixed inclusion error with some plugins (*nuts* for example).
+
+## 4.3.3
+
+- Improved nodejs/npm version checking.
+
+## 4.3.2
+
+- Fixed a problem displaying the status of an info command in the advanced configuration of the command if the value is 0.
+
+## 4.3.1
+
+### 4.3 : Prerequisites
+
+- Debian 10 Buster
+- PHP 7.3
+
+### 4.3 : News / Improvements
+
+- **Tools / Scenarios** : Modal for ctrl+click editing in editable fields of blocks/actions.
+- **Tools / Scenarios** : Addition of a contextual menu on a scenario to make active/inactive, change group, change parent object.
+- **Tools / Objects** : Added a contextual menu on an object to manage visibility, change parent object, and move.
+- **Tools / Replace** : New tool for replacing equipment and commands.
+- **Analysis / Timeline** : Added a search field to filter the display.
+- **Users** : Added a button to copy the rights of a limited user to another.
+- **Report** : Ability to report on Jeedom health.
+- **Report** : Ability to report on alerted equipment.
+- **Update** : Ability to see from Jeedom the OS / PIP2 / PIP3 / NodeJS packages that can be updated and launch the update (beware risky function and in beta).
+- **Alert command** : Added an option to receive a message in case of end of alert.
+- **Plugins** : Possibility to disable the installation of dependencies by plugin.
+- **Optimization** : jeeFrontEnd{}, jeephp2js{}, minor bugfixes and optimizations.
+
+### 4.3 : WebApp
+
+- Notes integration.
+- Possibility to display the tiles only on a column (setting in the configuration of jeedom interface tab).
+
+### 4.3 : Autre
+
+- **Lib** : Update Font Awesome 5.13.1 to 5.15.4.
+
+### 4.3 : Notes
+
+- For users who use menus in their designs in the form :
+
+``<a onClick="planHeader_id=15; displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+You must now use:
+
+``<a onClick="jeephp2js.planHeader_id=15; jeeFrontEnd.plan.displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+see [Doc dev](https://doc.jeedom.com/en_US/dev/core4.3).
+
+Blog post [here](https://blog.jeedom.com/6739-jeedom-4-3/)
+
 # Changelog Jeedom V4.2
+
+## 4.2.21
+
+- Fixed a bug on summaries.
+
+## 4.2.20
+
+- Added a system to correct pip packages during a bad installation.
+
+## 4.2.19
+
+- Added version management for python packages (allows to correct the problem with the zigbee plugin).
+
+## 4.2.18
+
+- Nodejs update.
+
+## 4.2.17
+
+- Bugfix Core : Limited user access to designs and views.
+- Bugfix UI : Display of A blocks in Chrome.
+- Bugfix : Link to documentation when the plugin is in beta.
+
+## 4.2.16
+
+- Bugfix Core : Scenario : Merge pasted items in some cases.
+- Bugfix Core : Archive creation with file editor.
+- Bugfix : Increased delay for contacting the monitoring service (allows to lighten the load on cloud servers).
+
+## 4.2.15
+
+- Bugfix UI : Scenario : Adding the action *genericType* in the selection mode.
+- Bugfix Core : Fixed lag on calculated histories.
+- Bugfix : Installation of zigbee plugin dependencies.
+
+## 4.2.14
+
+- Bugfix UI : Research removed by activating the raw log option.
+- Bugfix UI : Unable to download empty log.
+- Bugfix UI : Cmd.action.slider.value widget
+
+- Bugfix Core : Size of background images in relation to the size of the design.
+- Bugfix Core : Fixed an issue with api keys still disabled.
 
 ## 4.2.13
 
-- Improvement : Creation of api keys by default inactive (if the creation request does not come from the plugin).
-- Improvement : added backup size on backup management page
-- Bugfix Core : fixed a backup size issue with the Atlas plugin
 - Bugfix UI : Option *Hide on desktop* summaries.
 - Bugfix UI : Historiques: Respect scales when zooming.
+
+- Bugfix Core : Fixed a backup size issue with the Atlas plugin.
+
+- Improvement : Creation of api keys by default inactive (if the creation request does not come from the plugin).
+- Improvement : Added backup size on backup management page.
 
 ## 4.2.12
 
@@ -63,7 +202,7 @@
 ### 4.2 : Prerequisites
 
 - Debian 10 Buster
-- Php 7.3
+- PHP 7.3
 
 ### 4.2 : News / Improvements
 
@@ -88,13 +227,13 @@
 - **Equipment configuration** : Possibility of configuring a history curve at the bottom of the tile of a device.
 - **Ordered** : Possibility of making a calculation on a command action of type slider before execution of the command.
 - **Plugins / Management** : Display of the plugin category, and a link to directly open its page without going through the Plugins menu.
-- **Scenario** : Code fallback function (*code folding*) in the *Code Blocks*. Ctrl + Y and Ctrl + I shortcuts.
+- **Scenario** : Code fallback function (*folding code*) in the *Code Blocks*. Ctrl + Y and Ctrl + I shortcuts.
 - **Scenario** : Copy / paste and undo / redo bugfix (complete rewrite).
-- **Scenario** : Adding calculation functions ````averageTemporal(commande,période)```` & ````averageTemporalBetween(commande,start,end)```` allowing to obtain the average weighted by the duration over the period.
+- **Scenario** : Adding calculation functions ``averageTemporal(commande,période)`` & ``averageTemporalBetween(commande,start,end)`` allowing to obtain the average weighted by the duration over the period.
 - **Scenario** : Added support for Generic Types in scenarios.
-	- Trigger : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0`
-	- IF `genericType (LIGHT_STATE,#[Salon]#) > 0`
-	- `GenericType` action
+	- Trigger : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0``
+	- IF ``genericType(LIGHT_STATE,#[Salon]#) > 0``
+	- Stock ``genericType``
 - **Objects** : Plugins can now request specific parameters specific to objects.
 - **Users** : Plugins can now request specific parameters specific to users.
 - **Users** : Ability to manage the profiles of different Jeedom users from the user management page.
@@ -102,14 +241,14 @@
 - **Updates Center** : Update Center now displays the date of the last update.
 - **Adding the user performing an action** : Addition in the command execution options of the id and user name launching the action (visible in the log event for example)
 - **Documentation and changelog plugin beta** : Documentation and changelog management for plugins in beta. Attention, in beta the changelog is not dated.
-- **Main** : Integration of the JeeXplorer plugin in the Core. Now used for Widget Code, and advanced customization.
+- **General** : Integration of the JeeXplorer plugin in the Core. Now used for Widget Code, and advanced customization.
 - **Configuration** : New option in configuration / interface to not color the title banner of the equipment.
 - **Configuration** : Possibility to configure wallpapers on the Dashboard, Analysis, Tools pages and their opacity according to the theme.
 - **Configuration**: Adding Jeedom DNS based on Wireguard instead of Openvpn (Administration / networks). Faster, and more stable, but still in testing. Please note that this is currently not Jeedom Smart compatible.
 - **Configuration** : OSDB settings: Addition of a tool for mass editing of equipment, commands, objects, scenarios.
 - **Configuration** : OSDB settings: Adding a dynamic SQL query constructor.
 - **Configuration**: Possibility to deactivate cloud monitoring (Administration / Updates / Market).
-- **jeeCLI** : Addition of ````jeeCli.php```` in the core / php folder of Jeedom to manage some command line functions.
+- **jeeCLI** : Addition of ``jeeCli.php`` in the core / php folder of Jeedom to manage some command line functions.
 - *Big improvements to the interface in terms of performance / responsiveness. jeedomUtils {}, jeedomUI {}, main menu rewritten in pure css, removal of initRowWorflow (), simplification of the code, css fixes for small screens, etc.*
 
 ### 4.2 : Core Widgets
@@ -118,7 +257,7 @@
 - The optional parameters available on widgets are now displayed for each widget, either in the command configuration or from the Dashboard edit mode.
 - Many Core Widgets now accept optional color settings. (horizontal and vertical slider, gauge, compass, rain, shutter, templates slider, etc.).
 - Core Widgets with display of a *time* now support an optional parameter **time : dated** to display a relative date (Yesterday at 4:48 p.m., Last Monday at 2:00 p.m., etc).
-- Cursor (action) type Widgets now accept an optional parameter *step* to define the change step at the cursor.
+- Cursor (action) type Widgets now accept an optional parameter *steps* to define the change step at the cursor.
 - The Widget **action.slider.value** is now available in desktop, with an optional parameter *noslider*, which makes it a *input* simple.
 - The Widget **info.numeric.default** (*Gauge*) has been redone in pure css, and integrated in mobile. They are therefore now identical in desktop and mobile.
 
@@ -134,11 +273,11 @@ We have added a confirmation of the cloud backup password to prevent entry error
 
 - In order to significantly increase the security of the Jeedom solution, the file access system has changed. Before certain files were prohibited from certain locations. From v4.2, files are explicitly allowed by type and location.
 - Change at the API level, previously "tolerant" if you arrived with the Core key indicating plugin XXXXX. This is no longer the case, you must arrive with the key corresponding to the plugin.
-- In http API you could indicate a plugin name in type, this is no longer possible. The type corresponding to the type of the request (scenario, eqLogic, cmd, etc.) must correspond to the plugin. For example for the virtual plugin you had ````type=virtual```` in the url it is now necessary to replace by ````plugin=virtual&type=event````.
+- In http API you could indicate a plugin name in type, this is no longer possible. The type corresponding to the type of the request (scenario, eqLogic, cmd, etc.) must correspond to the plugin. For example for the virtual plugin you had ``type=virtual`` in the url it is now necessary to replace by ``plugin=virtual&type=event``.
 - Reinforcement of sessions : Change to sha256 with 64 characters in strict mode.
 
 The Jeedom team is well aware that these changes can have an impact and be embarrassing for you, but we cannot compromise on safety.
-The plugins must respect the recommendations on the tree structure of folders and files : [Doc](https://doc.jeedom.com/en_US/dev/plugin_template).
+The plugins must respect the recommendations on the tree structure of folders and files : [Doctor](https://doc.jeedom.com/en_US/dev/plugin_template).
 
 [Blog: Jeedom 4 introduction.2 : Security](https://blog.jeedom.com/6165-introduction-jeedom-4-2-la-securite/)
 
@@ -243,7 +382,7 @@ The plugins must respect the recommendations on the tree structure of folders an
 - **Scenario variables window** : The scenarios used by the variables are now clickable, with opening of the search on the variable.
 - **Analysis / History** : Ctrl Click on a legend to display only this history, Alt Click to display them all.
 - **Analysis / History** : The options *grouping, type, variation, staircase* are active only with a single displayed curve.
-- **Analysis / History** : We can now use the option *Area* with the option *Staircase*.
+- **Analysis / History** : We can now use the option *Area* with the option *Stairs*.
 - **Analysis / Logs** : New monospace type font for logs.
 - **View** : Possibility to put scenarios.
 - **View** : Edit mode now inserting the moved tile.
@@ -260,10 +399,10 @@ The plugins must respect the recommendations on the tree structure of folders an
 - **Domotic overview** : Possibility to move several pieces of equipment from one object to another.
 - **Domotic overview** : Possibility to select all the equipment of an object.
 - **Task engine** : On the tab *Daemon*, disabled plugins no longer appear.
-- **Report** : The use of *chromium* if available.
+- **Report** : The use of *chrome* if available.
 - **Report** : Possibility to export timelines.
-- **Configuration** : The tab *Information* is now in the tab *Main*.
-- **Configuration** : The tab *Orders* is now in the tab *Equipment*.
+- **Configuration** : Tab *Information* is now in the tab *General*.
+- **Configuration** : Tab *Orders* is now in the tab *Equipment*.
 - **Advanced equipment configuration window** : Dynamic change of table configuration.
 - **Equipment** : New Category *Opening*.
 - **Equipment** : Possibility of inverting cursor type commands (info and action)
@@ -274,7 +413,7 @@ The plugins must respect the recommendations on the tree structure of folders an
 	- Ctrl Clic / Clic Center also available in their context menus (on the tabs).
 - New ModalDisplay page :
 	- Analysis menu : Ctrl Click / Click Center on *Real time* : Open the window in a new tab, in full screen.
-	- Tools menu : Ctrl Click / Click Center on *Notes*, *Expression tester*, *Variables*, *Research* : Open the window in a new tab, in full screen.
+	- Tools menu : Ctrl Click / Click Center on *Ratings*, *Expression tester*, *Variables*, *Research* : Open the window in a new tab, in full screen.
 - Code Block, File Editor, Advanced Customization : Dark theme adaptation.
 - Improved image selection window.
 
@@ -295,14 +434,14 @@ The plugins must respect the recommendations on the tree structure of folders an
 - **Lib** : Update HighStock v7.1.2 to v8.2.0.
 - **Lib** : Update jQuery v3.4.1 to v3.5.1.
 - **Lib** : Update Font Awesome 5.9.0 to 5.13.1.
-- **API** :  addition of an option to prohibit an api key of a plugin from executing core methods (general)
+- **APIs** :  addition of an option to prohibit an api key of a plugin from executing core methods (general)
 - Securing Ajax requests.
 - Securing API calls.
 - Bug fixes.
 - Numerous desktop / mobile performance optimizations.
 
 ### 4.1 : Changements
-- Function **scenario-> getHumanName()** of the php scenario class no longer returns *[object] [group] [name]* But *[group] [object] [name]*.
+- Function **scenario-> getHumanName()** of the php scenario class no longer returns *[object] [group] [name]* corn *[group] [object] [name]*.
 - Function **scenario-> byString()** must now be called with the structure *[group] [object] [name]*.
 - Functions **network-> getInterfaceIp () network-> getInterfaceMac () network-> getInterfaces()** have been replaced by **network-> getInterfacesInfo()**
 
@@ -441,9 +580,9 @@ The plugins must respect the recommendations on the tree structure of folders an
 - Configuration : Change of #message# at #subject# in Configuration / Logs / Messages to avoid duplicating the message.
 - Configuration : Possibility in the summaries to add an exclusion of orders that have not been updated for more than XX minutes (example for the calculation of temperature averages if a sensor has not reported anything for more than 30min it will be excluded from the calculation)<br/><br/>
 - Scenario : The colorization of blocks is no longer random, but by block type.
-- Scenario : Possibility by doing a Ctrl + click on the button *execution* save it, launch it, and display the log (if the log level is not on *No*).
+- Scenario : Possibility by doing a Ctrl + click on the button *execution* save it, launch it, and display the log (if the log level is not on *Any*).
 - Scenario : Confirmation of block deletion. Ctrl + click to avoid confirmation.
-- Scenario : Addition of a search function in Code blocks. Search : Ctrl + F then Enter, Next result : Ctrl + G, Previous result : Ctrl + Shift + G
+- Scenario : Addition of a search function in Code blocks. To research : Ctrl + F then Enter, Next result : Ctrl + G, Previous result : Ctrl+Shift+G
 - Scenario : Possibility of condensing the blocks.
 - Scenario : The 'Add block' action switches to the Scenario tab if necessary.
 - Scenario : New block copy / paste functions. Ctrl + click to cut / replace.

@@ -1,12 +1,151 @@
-# Changelog Jeedom V4.2
+# Änderungsprotokoll Jeedom V4.3
+
+## 4.3.9
+
+- Verbesserte Kachelbearbeitung.
+- Verbesserte Sichtbarkeit von dunklen und hellen Kontrollkästchen.
+- Verlaufsstapelung behoben.
+- Optimierung des Zeitumstellungsmanagements (danke @jpty).
+- Fehlerbehebungen und Verbesserungen.
+
+## 4.3.8
+
+- Bug-Fix.
+- Verbesserte Ask-Sicherheit bei Verwendung der generateAskResponseLink-Funktion durch Plugins : Verwendung eines eindeutigen Tokens (kein Senden des Kern-API-Schlüssels mehr) und Sperren der Antwort nur unter den möglichen Optionen.
+- Es wurde ein Fehler behoben, der die Installation von jeedom verhinderte.
+- Fehler in influxdb behoben.
+
+
+## 4.3.7
+
+- Fehlerbehebungen (die sich auf ein zukünftiges Plugin in der Entwicklung auswirken).
+- Anzeigefehler bei einigen Widgets basierend auf Einheiten behoben.
+- Beschreibung hinzugefügt **Quelle** für Nachrichtenaktionen (vgl [Doc-Entwickler](https://doc.jeedom.com/de_DE/dev/core4.3)).
+
+## 4.3.6
+
+- Einheitenumrechnung für Sekunden (s) entfernt).
+- Entfernung des Betriebssystem-Update-Menüs für Jeedom-Boxen (Betriebssystem-Updates werden von Jeedom SAS verwaltet).
+- Fehler im Verlaufskonfigurationsmodus behoben.
+- Hinzufügen einer Aktion *Thema ändern* für Szenarien, Wertaktionen, Pre-/Post-Exec-Aktionen : Es ermöglicht, das Thema der Benutzeroberfläche sofort zu ändern, in dunkel, hell oder das andere (toggle).
+
+## 4.3.5
+
+- Bug-Fix.
+
+## 4.3.4
+
+- Ein Problem mit Hintergrundbildern wurde behoben.
+- Ein Fehler mit dem Standardnummern-Widget wurde behoben.
+- Einschlussfehler bei einigen Plugins behoben (*Nüsse* zum Beispiel).
+
+## 4.3.3
+
+- Versionsprüfung von nodejs/npm verbessert.
+
+## 4.3.2
+
+- Es wurde ein Problem behoben, bei dem der Status eines Info-Befehls in der erweiterten Konfiguration des Befehls angezeigt wurde, wenn der Wert 0 ist.
+
+## 4.3.1
+
+### 4.3 : Voraussetzungen
+
+- Debian 10 Buster
+- PHP7.3
+
+### 4.3 : Neuigkeiten / Verbesserungen
+
+- **Werkzeuge / Szenarien** : Modal für Strg+Klick-Bearbeitung in bearbeitbaren Feldern von Blöcken/Aktionen.
+- **Werkzeuge / Szenarien** : Hinzufügen eines Kontextmenüs zu einem Szenario zum Aktivieren/Deaktivieren, Ändern der Gruppe, Ändern des übergeordneten Objekts.
+- **Werkzeuge / Objekte** : Ein Kontextmenü für ein Objekt wurde hinzugefügt, um die Sichtbarkeit zu verwalten, das übergeordnete Objekt zu ändern und es zu verschieben.
+- **Werkzeuge / Ersetzen** : Neues Tool zum Ersetzen von Ausrüstung und Befehlen.
+- **Analyse / Zeitleiste** : Ein Suchfeld hinzugefügt, um die Anzeige zu filtern.
+- **Benutzer** : Eine Schaltfläche hinzugefügt, um die Rechte eines eingeschränkten Benutzers auf einen anderen zu kopieren.
+- **Prüfbericht** : Möglichkeit, über die Gesundheit von Jeedom zu berichten.
+- **Prüfbericht** : Möglichkeit, über alarmierte Geräte zu berichten.
+- **Aktualisieren** : Möglichkeit, von Jeedom die OS / PIP2 / PIP3 / NodeJS-Pakete zu sehen, die aktualisiert werden können, und das Update zu starten (Vorsicht, riskante Funktion und in Beta).
+- **Alarmbefehl** : Option hinzugefügt, um eine Nachricht im Falle des Endes des Alarms zu erhalten.
+- **Plugins** : Möglichkeit, die Installation von Abhängigkeiten per Plugin zu deaktivieren.
+- **Optimierung** : jeeFrontEnd{}, jeephp2js{}, kleinere Bugfixes und Optimierungen.
+
+### 4.3 : WebApp
+
+- Notes-Integration.
+- Möglichkeit, die Kacheln nur auf einer Spalte anzuzeigen (Einstellung in der Konfiguration der Registerkarte Jeedom-Schnittstelle).
+
+### 4.3 : Autre
+
+- **Lib** : Aktualisieren Sie Font Awesome 5.13.1 bis 5.15.4.
+
+### 4.3 : Notes
+
+- Für Benutzer, die Menüs in ihren Designs im Formular verwenden :
+
+``<a onClick="planHeader_id=15; displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+Sie müssen jetzt verwenden:
+
+``<a onClick="jeephp2js.planHeader_id=15; jeeFrontEnd.plan.displayPlan();"><li class="monmenu"><div class="imagette"><img src="theme1/images/new/home.png" height=30px></div></br></li></a>``
+
+sehen [Doc-Entwickler](https://doc.jeedom.com/de_DE/dev/core4.3).
+
+Blogeintrag [Hier](https://blog.jeedom.com/6739-jeedom-4-3/)
+
+# Änderungsprotokoll Jeedom V4.2
+
+## 4.2.21
+
+- Fehler in Zusammenfassungen behoben.
+
+## 4.2.20
+
+- Ein System hinzugefügt, um Pip-Pakete während einer fehlerhaften Installation zu korrigieren.
+
+## 4.2.19
+
+- Versionsverwaltung für Python-Pakete hinzugefügt (ermöglicht die Behebung des Problems mit dem Zigbee-Plugin).
+
+## 4.2.18
+
+- Nodejs-Update.
+
+## 4.2.17
+
+- Bugfix-Kern : Eingeschränkter Benutzerzugriff auf Designs und Ansichten.
+- Bugfix-Benutzeroberfläche : Anzeige von A-Blöcken in Chrome.
+- Fehlerbehebung : Link zur Dokumentation, wenn sich das Plugin in der Beta-Phase befindet.
+
+## 4.2.16
+
+- Bugfix-Kern : Szenario : Eingefügte Elemente in einigen Fällen zusammenführen.
+- Bugfix-Kern : Archiverstellung mit Dateieditor.
+- Fehlerbehebung : Erhöhte Verzögerung für die Kontaktaufnahme mit dem Überwachungsdienst (ermöglicht die Belastung von Cloud-Servern zu verringern).
+
+## 4.2.15
+
+- Bugfix-Benutzeroberfläche : Szenario : Hinzufügen der Aktion *generischerTyp* im Auswahlmodus.
+- Bugfix-Kern : Verzögerung bei berechneten Historien behoben.
+- Fehlerbehebung : Installation von Zigbee-Plugin-Abhängigkeiten.
+
+## 4.2.14
+
+- Bugfix-Benutzeroberfläche : Recherche durch Aktivieren der Raw-Log-Option entfernt.
+- Bugfix-Benutzeroberfläche : Leeres Protokoll kann nicht heruntergeladen werden.
+- Bugfix-Benutzeroberfläche : Cmd.action.slider.value-Widget
+
+- Bugfix-Kern : Größe der Hintergrundbilder im Verhältnis zur Größe des Designs.
+- Bugfix-Kern : Ein Problem mit weiterhin deaktivierten API-Schlüsseln wurde behoben.
 
 ## 4.2.13
 
-- Verbesserung : Erstellung von API-Schlüsseln standardmäßig inaktiv (wenn die Erstellungsanfrage nicht vom Plugin kommt).
-- Verbesserung : Sicherungsgröße auf der Sicherungsverwaltungsseite hinzugefügt
-- Bugfix-Kern : Ein Problem mit der Backup-Größe mit dem Atlas-Plugin wurde behoben
 - Bugfix-Benutzeroberfläche : Möglichkeit *Auf dem Desktop verstecken* Zusammenfassungen.
 - Bugfix-Benutzeroberfläche : Historiques: Beachten Sie beim Zoomen die Maßstäbe.
+
+- Bugfix-Kern : Ein Problem mit der Backup-Größe mit dem Atlas-Plugin wurde behoben.
+
+- Verbesserung : Erstellung von API-Schlüsseln standardmäßig inaktiv (wenn die Erstellungsanfrage nicht vom Plugin kommt).
+- Verbesserung : Sicherungsgröße auf der Sicherungsverwaltungsseite hinzugefügt.
 
 ## 4.2.12
 
@@ -63,12 +202,12 @@
 ### 4.2 : Voraussetzungen
 
 - Debian 10 Buster
-- Php 7.3
+- PHP7.3
 
 ### 4.2 : Neuigkeiten / Verbesserungen
 
-- **Synthese** : Möglichkeit zum Konfigurieren von Objekten für a *Design* oder ein *Aussicht* seit der Synthese.
-- **Instrumententafel** : Im Gerätekonfigurationsfenster (Bearbeitungsmodus) können Sie jetzt mobile Widgets und generische Typen konfigurieren.
+- **Synthese** : Möglichkeit zum Konfigurieren von Objekten für a *Design* oder ein *Ansicht* seit der Synthese.
+- **Armaturenbrett** : Im Gerätekonfigurationsfenster (Bearbeitungsmodus) können Sie jetzt mobile Widgets und generische Typen konfigurieren.
 - **Widgets** : Internationalisierung von Widgets von Drittanbietern (Benutzercode). sehen [Doc-Entwickler](https://doc.jeedom.com/de_DE/dev/core4.2).
 - **Analyse / Geschichte** : Möglichkeit, eine Historie über einen bestimmten Zeitraum zu vergleichen.
 - **Analyse / Geschichte** : Anzeige mehrerer Achsen in Y. Option für jede Achse eine eigene Skala zu haben, gruppiert nach Einheiten oder nicht.
@@ -81,7 +220,7 @@
 - **Zusammenfassungen** : Es ist möglich, die Zahl rechts neben dem Symbol niemals oder nur dann anzuzeigen, wenn sie positiv ist.
 - **Zusammenfassungen** : Die Änderung des Zusammenfassungsparameters in der Konfiguration und für Objekte ist jetzt sichtbar, ohne auf eine Änderung des Zusammenfassungswerts zu warten.
 - **Zusammenfassungen** : Konfiguration ist jetzt möglich [Aktionen zu Zusammenfassungen](/de_DE/concept/summary#Actions an résumés) (Strg + Klick auf eine Zusammenfassung) dank der virtuellen.
-- **Bericht** : Vorschau von PDF-Dateien.
+- **Prüfbericht** : Vorschau von PDF-Dateien.
 - **Gerätearten** : [Neue Seite](/de_DE/core/4.2/types) **Werkzeuge → Gerätetypen** Ermöglicht die Zuweisung von generischen Typen zu Geräten und Befehlen mit Unterstützung für Typen, die für installierte Plugins bestimmt sind (siehe [Doc-Entwickler](https://doc.jeedom.com/de_DE/dev/core4.2)).
 - **Auswahl der Abbildungen** : Neues globales Fenster für die Auswahl der Abbildungen *(Symbole, Bilder, Hintergründe)*.
 - **Tabellenanzeige** : Hinzufügen einer Schaltfläche rechts von der Suche auf den Seiten *Objekte* *Szenarien* *Interaktionen* *Widgets* und *Plugins* in den Tabellenmodus wechseln. Dies wird durch ein Cookie oder in gespeichert **Einstellungen → System → Konfiguration / Schnittstelle, Optionen**. Die Plugins können diese neue Funktion des Core nutzen. sehen [Doc-Entwickler](https://doc.jeedom.com/de_DE/dev/core4.2).
@@ -90,11 +229,11 @@
 - **Plugins / Management** : Anzeige der Plugin-Kategorie und ein Link zum direkten Öffnen der Seite, ohne das Plugins-Menü aufzurufen.
 - **Szenario** : Code-Fallback-Funktion (*Code falten*) in dem *Codeblöcke*. Tastenkombinationen Strg + Y und Strg + I.
 - **Szenario** : Bugfix kopieren / einfügen und rückgängig machen / wiederholen (vollständiges Umschreiben)).
-- **Szenario** : Berechnungsfunktionen hinzufügen ````averageTemporal(commande,période)```` & ````averageTemporalBetween(commande,start,end)```` Damit kann der nach der Duration über den Zeitraum gewichtete Durchschnitt ermittelt werden.
+- **Szenario** : Berechnungsfunktionen hinzufügen ``averageTemporal(commande,période)`` & ``averageTemporalBetween(commande,start,end)`` Damit kann der nach der Duration über den Zeitraum gewichtete Durchschnitt ermittelt werden.
 - **Szenario** : Unterstützung für generische Typen in Szenarien hinzugefügt.
-	- Abzug : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0`
-	- IF `genericType (LIGHT_STATE .),#[Salon]#) > 0`
-	- `GenericType`-Aktion
+	- Abzug : ``#genericType(LIGHT_STATE,#[Salon]#)# > 0``
+	- WENN ``genericType(LIGHT_STATE,#[Salon]#) > 0``
+	- Aktie ``genericType``
 - **Objekte** : Plugins können jetzt bestimmte objektspezifische Parameter anfordern.
 - **Benutzer** : Plugins können jetzt bestimmte benutzerspezifische Parameter anfordern.
 - **Benutzer** : Möglichkeit zum Verwalten der Profile verschiedener Jeedom-Benutzer auf der Benutzerverwaltungsseite.
@@ -109,7 +248,7 @@
 - **Aufbau** : OSDB-Einstellungen: Hinzufügen eines Tools zur Massenbearbeitung von Geräten, Befehlen, Objekten, Szenarien.
 - **Aufbau** : OSDB-Einstellungen: Hinzufügen eines dynamischen SQL-Abfragekonstruktors.
 - **Aufbau**: Möglichkeit zum Deaktivieren der Cloud-Überwachung (Administration / Updates / Market).
-- **jeeCLI** : Zugabe von ````jeeCli.php```` im core / php-Ordner von Jeedom, um einige Kommandozeilenfunktionen zu verwalten.
+- **jeeCLI** : Zugabe von ``jeeCli.php`` im core / php-Ordner von Jeedom, um einige Kommandozeilenfunktionen zu verwalten.
 - *Große Verbesserungen der Benutzeroberfläche in Bezug auf Leistung / Reaktionsfähigkeit. jeedomUtils {}, jeedomUI {}, Hauptmenü in reinem CSS umgeschrieben, Entfernung von initRowWorflow(), Vereinfachung des Codes, CSS-Fixes für kleine Bildschirme usw.*
 
 ### 4.2 : Kern-Widgets
@@ -118,8 +257,8 @@
 - Die optionalen Parameter, die für Widgets verfügbar sind, werden jetzt für jedes Widget entweder in der Befehlskonfiguration oder im Dashboard-Bearbeitungsmodus angezeigt.
 - Viele Core Widgets akzeptieren jetzt optionale Farbeinstellungen. (horizontaler und vertikaler Schieberegler, Messgerät, Kompass, Regen, Verschluss, Schieberegler für Vorlagen usw.).
 - Kern-Widgets mit Anzeige von a *Zeit* unterstützen jetzt einen optionalen Parameter **Zeit : datiert** um ein relatives Datum anzuzeigen (Gestern um 16:48 Uhr, Letzter Montag um 14:00 Uhr usw.)).
-- Widgets vom Typ Cursor (Aktion) akzeptieren jetzt einen optionalen Parameter *Schritt* um den Änderungsschritt am Cursor zu definieren.
-- Das Widget **action.slider.value** ist jetzt auf dem Desktop mit einem optionalen Parameter verfügbar *Noslider*, was macht es ein *Eingang* einfach.
+- Widgets vom Typ Cursor (Aktion) akzeptieren jetzt einen optionalen Parameter *Schritte* um den Änderungsschritt am Cursor zu definieren.
+- Das Widget **action.slider.value** ist jetzt auf dem Desktop mit einem optionalen Parameter verfügbar *kein Gleiter*, was macht es ein *Eingang* einfach.
 - Das Widget **info.numeric.default** (*Messgerät*) wurde in reinem CSS überarbeitet und in mobile integriert. Sie sind daher jetzt in Desktop und Mobile identisch.
 
 ### 4.2 : Cloud-Backup
@@ -134,15 +273,15 @@ Wir haben eine Bestätigung des Cloud-Backup-Passworts hinzugefügt, um Eingabef
 
 - Um die Sicherheit der Jeedom-Lösung deutlich zu erhöhen, wurde das Dateizugriffssystem geändert. Bevor bestimmte Dateien an bestimmten Orten verboten wurden. Ab v4.2, Dateien sind explizit nach Typ und Speicherort erlaubt.
 - Änderung auf API-Ebene, zuvor "tolerant", wenn Sie mit dem Core-Key-Anzeige-Plugin angekommen sind XXXXX. Dies ist nicht mehr der Fall, Sie müssen mit dem dem Plugin entsprechenden Schlüssel anreisen.
-- In der http-API könnten Sie einen Plugin-Namen im Typ angeben, dies ist nicht mehr möglich. Der dem Typ der Anfrage entsprechende Typ (szenario, eqLogic, cmd usw.) muss dem Plugin entsprechen. Zum Beispiel für das virtuelle Plugin, das Sie hatten ````type=virtual```` in der URL muss jetzt ersetzt werden durch ````plugin=virtual&type=event````.
+- In der http-API könnten Sie einen Plugin-Namen im Typ angeben, dies ist nicht mehr möglich. Der dem Typ der Anfrage entsprechende Typ (szenario, eqLogic, cmd usw.) muss dem Plugin entsprechen. Zum Beispiel für das virtuelle Plugin, das Sie hatten ``type=virtual`` in der URL muss jetzt ersetzt werden durch ``plugin=virtual&type=event``.
 - Verstärkung der Sitzungen : Wechseln Sie zu sha256 mit 64 Zeichen im strikten Modus.
 
 Das Jeedom-Team ist sich bewusst, dass diese Änderungen Auswirkungen haben und für Sie peinlich sein können, aber wir können keine Kompromisse bei der Sicherheit eingehen.
-Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien respektieren : [Dokument](https://doc.jeedom.com/de_DE/dev/plugin_template).
+Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien respektieren : [Arzt](https://doc.jeedom.com/de_DE/dev/plugin_template).
 
 [Blog: Jeedom 4 Einführung.2 : Sicherheit](https://blog.jeedom.com/6165-introduction-jeedom-4-2-la-securite/)
 
-# Changelog Jeedom V4.1
+# Änderungsprotokoll Jeedom V4.1
 
 ## 4.1.28
 
@@ -187,7 +326,7 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 
 - Bugfix Löschung der Zone in einer Ansicht.
 - Bugfix js Fehler, der in alten Browsern auftreten kann.
-- Bugfix cmd.info.numeric.default.HTML, wenn Befehl nicht sichtbar ist.
+- Fehlerbehebung cmd.info.numeric.default.HTML, wenn Befehl nicht sichtbar ist.
 - Bugfix-Anmeldeseite.
 
 ## 4.1.18
@@ -213,17 +352,17 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 
 - **Synthese** : Neue Seite hinzufügen **Home → Zusammenfassung** Bietet eine globale visuelle Zusammenfassung der Teile mit schnellem Zugriff auf Zusammenfassungen.
 - **Forschung** : Hinzufügen einer Suchmaschine in **Extras → Suchen**.
-- **Instrumententafel** : Im Bearbeitungsmodus wird jetzt die verschobene Kachel eingefügt.
-- **Instrumententafel** : Bearbeitungsmodus: Die Geräteaktualisierungssymbole werden durch ein Symbol ersetzt, das dank eines neuen vereinfachten Modals den Zugriff auf ihre Konfiguration ermöglicht.
-- **Instrumententafel** : Wir können jetzt auf die klicken *Zeit* Zeitaktions-Widgets zum Öffnen des Verlaufsfensters des Befehls "Verknüpfte Informationen".
-- **Instrumententafel** : Die Größe der Kachel eines neuen Geräts passt sich dem Inhalt an.
-- **Instrumententafel** : Hinzufügen (zurück!) Eine Schaltfläche zum Filtern der angezeigten Elemente nach Kategorie.
-- **Instrumententafel** : Strg Klicken Sie auf eine Info, um das Verlaufsfenster mit allen historisierten Befehlen der auf der Kachel sichtbaren Ausrüstung zu öffnen. Strg Klicken Sie auf eine Legende, um nur diese anzuzeigen. Alt Klicken Sie, um alle anzuzeigen.
-- **Instrumententafel** : Neugestaltung der Anzeige des Objektbaums (Pfeil links neben der Suche).
-- **Instrumententafel** : Möglichkeit, Hintergrundbilder zu verwischen (Konfiguration -> Benutzeroberfläche)).
+- **Armaturenbrett** : Im Bearbeitungsmodus wird jetzt die verschobene Kachel eingefügt.
+- **Armaturenbrett** : Bearbeitungsmodus: Die Geräteaktualisierungssymbole werden durch ein Symbol ersetzt, das dank eines neuen vereinfachten Modals den Zugriff auf ihre Konfiguration ermöglicht.
+- **Armaturenbrett** : Wir können jetzt auf die klicken *Zeit* Zeitaktions-Widgets zum Öffnen des Verlaufsfensters des Befehls "Verknüpfte Informationen".
+- **Armaturenbrett** : Die Größe der Kachel eines neuen Geräts passt sich dem Inhalt an.
+- **Armaturenbrett** : Hinzufügen (zurück!) Eine Schaltfläche zum Filtern der angezeigten Elemente nach Kategorie.
+- **Armaturenbrett** : Strg Klicken Sie auf eine Info, um das Verlaufsfenster mit allen historisierten Befehlen der auf der Kachel sichtbaren Ausrüstung zu öffnen. Strg Klicken Sie auf eine Legende, um nur diese anzuzeigen. Alt Klicken Sie, um alle anzuzeigen.
+- **Armaturenbrett** : Neugestaltung der Anzeige des Objektbaums (Pfeil links neben der Suche).
+- **Armaturenbrett** : Möglichkeit, Hintergrundbilder zu verwischen (Konfiguration -> Benutzeroberfläche)).
 - **Tools / Widgets** : Die Funktion *Bewerben Sie sich am* Zeigt die aktivierten verknüpften Befehle an. Wenn Sie diese Option deaktivieren, wird das Standard-Kern-Widget auf diesen Befehl angewendet.
-- **Widgets** : Hinzufügen eines Kern-Widgets *sliderVertical*.
-- **Widgets** : Hinzufügen eines Kern-Widgets *binarySwitch*.
+- **Widgets** : Hinzufügen eines Kern-Widgets *Schieberegler Vertikal*.
+- **Widgets** : Hinzufügen eines Kern-Widgets *binärSchalter*.
 - **Update Center** : Aktualisierungen werden beim Öffnen der Seite automatisch überprüft, wenn sie 120 Minuten älter ist.
 - **Update Center** : Der Fortschrittsbalken befindet sich jetzt auf der Registerkarte *Core und Plugins*, und das Protokoll wird standardmäßig auf der Registerkarte geöffnet *Information*.
 - **Update Center** : Wenn Sie während eines Updates einen anderen Browser öffnen, wird dies in der Fortschrittsanzeige und im Protokoll angezeigt.
@@ -235,7 +374,7 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 - **Szenario** : Funktionen *Statistik (), Durchschnitt (), Max (), Min (), Trend (), Dauer()* : Bugfix über den Zeitraum *gestern*, und jetzt akzeptieren *Tag* (für 1 Tag).
 - **Szenario** : Möglichkeit, das automatische Angebotssystem zu deaktivieren (Einstellungen → System → Konfiguration : Equipements).
 - **Szenario** : Anzeigen a *Warnung* wenn kein Trigger konfiguriert ist.
-- **Szenario** : Bugfix von *wählen* auf Block kopieren / einfügen.
+- **Szenario** : Bugfix von *auswählen* auf Block kopieren / einfügen.
 - **Szenario** : Kopieren / Einfügen eines Blocks zwischen verschiedenen Szenarien.
 - **Szenario** : Die Funktionen zum Rückgängigmachen / Wiederherstellen sind jetzt als Schaltflächen verfügbar (neben der Schaltfläche zum Erstellen von Blöcken)).
 - **Szenario** :  Hinzufügung von "Historischer Export" (exportHistory)
@@ -245,10 +384,10 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 - **Analyse / Geschichte** : Die Optionen *Gruppierung, Typ, Variation, Treppe* sind nur mit einer einzigen angezeigten Kurve aktiv.
 - **Analyse / Geschichte** : Wir können jetzt die Option verwenden *Bereich* mit der Option *Treppe*.
 - **Analyse / Protokolle** : Neue Monospace-Schriftart für Protokolle.
-- **Aussicht** : Möglichkeit, Szenarien zu setzen.
-- **Aussicht** : Im Bearbeitungsmodus wird jetzt die verschobene Kachel eingefügt.
-- **Aussicht** : Bearbeitungsmodus: Die Geräteaktualisierungssymbole werden durch ein Symbol ersetzt, das dank eines neuen vereinfachten Modals den Zugriff auf ihre Konfiguration ermöglicht.
-- **Aussicht** : Die Anzeigereihenfolge ist jetzt unabhängig von der im Dashboard.
+- **Ansicht** : Möglichkeit, Szenarien zu setzen.
+- **Ansicht** : Im Bearbeitungsmodus wird jetzt die verschobene Kachel eingefügt.
+- **Ansicht** : Bearbeitungsmodus: Die Geräteaktualisierungssymbole werden durch ein Symbol ersetzt, das dank eines neuen vereinfachten Modals den Zugriff auf ihre Konfiguration ermöglicht.
+- **Ansicht** : Die Anzeigereihenfolge ist jetzt unabhängig von der im Dashboard.
 - **Zeitleiste** : Trennung von Verlaufs- und Zeitleisten-Seiten.
 - **Zeitleiste** : Integration der Timeline in die DB aus Zuverlässigkeitsgründen.
 - **Zeitleiste** : Verwaltung mehrerer Zeitleisten.
@@ -260,10 +399,10 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 - **Zusammenfassung der Hausautomation** : Möglichkeit, mehrere Geräte von einem Objekt zum anderen zu bewegen.
 - **Zusammenfassung der Hausautomation** : Möglichkeit, alle Geräte eines Objekts auszuwählen.
 - **Task-Engine** : Auf der Registerkarte *Dämon*, deaktivierte Plugins werden nicht mehr angezeigt.
-- **Bericht** : Die Verwendung von *Chrom* wenn verfügbar.
-- **Bericht** : Möglichkeit zum Exportieren von Zeitleisten.
-- **Aufbau** : Die Registerkarte *Information* ist jetzt in der Registerkarte *Allgemein*.
-- **Aufbau** : Die Registerkarte *Aufträge* ist jetzt in der Registerkarte *Ausrüstung*.
+- **Prüfbericht** : Die Verwendung von *Chrom* wenn verfügbar.
+- **Prüfbericht** : Möglichkeit zum Exportieren von Zeitleisten.
+- **Aufbau** : Tab *Information* ist jetzt in der Registerkarte *Allgemein*.
+- **Aufbau** : Tab *Aufträge* ist jetzt in der Registerkarte *Ausrüstung*.
 - **Fenster zur erweiterten Gerätekonfiguration** : Dynamische Änderung der Schalttafelkonfiguration.
 - **Ausrüstung** : Neue Kategorie *Öffnung*.
 - **Ausrüstung** : Möglichkeit des Invertierens von Cursortypbefehlen (Info und Aktion))
@@ -274,7 +413,7 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 	- Ctrl Clic / Clic Center ist auch in den Kontextmenüs (auf den Registerkarten) verfügbar).
 - Neue ModalDisplay-Seite :
 	- Analysemenü : Strg Klicken / Klicken Sie auf Mitte *Echtzeit* : Öffnen Sie das Fenster in einer neuen Registerkarte im Vollbildmodus.
-	- Menü Extras : Strg Klicken / Klicken Sie auf Mitte *Anmerkungen*, *Expressionstester*, *Variablen*, *Forschung* : Öffnen Sie das Fenster in einer neuen Registerkarte im Vollbildmodus.
+	- Menü Extras : Strg Klicken / Klicken Sie auf Mitte *Bewertungen*, *Expressionstester*, *Variablen*, *Forschung* : Öffnen Sie das Fenster in einer neuen Registerkarte im Vollbildmodus.
 - Codeblock, Datei-Editor, Erweiterte Anpassung : Dunkle Themenanpassung.
 - Verbessertes Bildauswahlfenster.
 
@@ -294,20 +433,20 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 - **Dokumentation** : Neue Seite *Tastatur- / Mausverknüpfungen* einschließlich einer Zusammenfassung aller Verknüpfungen in Jeedom. Zugriff über das Dashboard-Dokument oder die FAQ.
 - **Lib** : Aktualisieren Sie HighStock v7.1.2 bis v8.2.0.
 - **Lib** : Aktualisieren Sie jQuery v3.4.1 bis v3.5.1.
-- **Lib** : Update Font Awesome 5.9.0 bis 5.13.1.
-- **API** :  Hinzufügung einer Option, um zu verhindern, dass ein API-Schlüssel eines Plugins Kernmethoden ausführt (allgemein))
+- **Lib** : Aktualisieren Sie Font Awesome 5.9.0 bis 5.13.1.
+- **APIs** :  Hinzufügung einer Option, um zu verhindern, dass ein API-Schlüssel eines Plugins Kernmethoden ausführt (allgemein))
 - Sichern von Ajax-Anfragen.
 - API-Aufrufe sichern.
 - Fehlerbehebungen.
 - Zahlreiche Leistungsoptimierungen für Desktop / Mobile.
 
 ### 4.1 : Changements
-- Die Funktion **Szenario-> getHumanName()** der PHP-Szenario-Klasse wird nicht mehr zurückgegeben *[Objekt] [Gruppe] [Name]* Aber *[Gruppe] [Objekt] [Name]*.
+- Die Funktion **Szenario-> getHumanName()** der PHP-Szenario-Klasse wird nicht mehr zurückgegeben *[Objekt] [Gruppe] [Name]* Mais *[Gruppe] [Objekt] [Name]*.
 - Die Funktion **Szenario-> byString()** muss nun mit der Struktur aufgerufen werden *[Gruppe] [Objekt] [Name]*.
 - Funktionen **network-> getInterfaceIp () network-> getInterfaceMac () network-> getInterfaces()** wurden ersetzt durch **network-> getInterfacesInfo()**
 
 
-# Changelog Jeedom V4.0
+# Änderungsprotokoll Jeedom V4.0
 
 ## 4.0.62
 
@@ -404,12 +543,12 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 - Die Suchfelder (Dashboard, Szenarien, Objekte, Widgets, Interaktionen, Plugins) sind jetzt beim Öffnen der Seite aktiv, sodass Sie eine Suche direkt eingeben können.
 - In den Suchfeldern wurde eine X-Schaltfläche hinzugefügt, um die Suche abzubrechen.
 - Während einer Suche wird der Schlüssel *Flucht* Suche abbrechen.
-- Instrumententafel : Im Bearbeitungsmodus sind das Suchsteuerelement und seine Schaltflächen deaktiviert und werden behoben.
-- Instrumententafel : Im Bearbeitungsmodus ein Klick auf eine Schaltfläche *erweitern* rechts von Objekten wird die Größe der Kacheln des Objekts auf die höchste Höhe geändert. Strg + Klick reduziert sie auf die niedrigste Höhe.
-- Instrumententafel : Die Befehlsausführung auf einer Kachel wird jetzt durch die Schaltfläche signalisiert *Aktualisierung*. Wenn sich keine auf der Kachel befindet, wird sie während der Ausführung angezeigt.
-- Instrumententafel : Die Kacheln zeigen einen Infobefehl (historisiert, wodurch das Verlaufsfenster geöffnet wird) oder eine Aktion beim Schweben an.
-- Instrumententafel : Im Verlaufsfenster können Sie diesen Verlauf jetzt in Analyse / Verlauf öffnen.
-- Instrumententafel : Das Verlaufsfenster behält seine Position / Abmessungen bei, wenn ein anderer Verlauf erneut geöffnet wird.
+- Armaturenbrett : Im Bearbeitungsmodus sind das Suchsteuerelement und seine Schaltflächen deaktiviert und werden behoben.
+- Armaturenbrett : Im Bearbeitungsmodus ein Klick auf eine Schaltfläche *erweitern* rechts von Objekten wird die Größe der Kacheln des Objekts auf die höchste Höhe geändert. Strg + Klick reduziert sie auf die niedrigste Höhe.
+- Armaturenbrett : Die Befehlsausführung auf einer Kachel wird jetzt durch die Schaltfläche signalisiert *Aktualisierung*. Wenn sich keine auf der Kachel befindet, wird sie während der Ausführung angezeigt.
+- Armaturenbrett : Die Kacheln zeigen einen Infobefehl (historisiert, wodurch das Verlaufsfenster geöffnet wird) oder eine Aktion beim Schweben an.
+- Armaturenbrett : Im Verlaufsfenster können Sie diesen Verlauf jetzt in Analyse / Verlauf öffnen.
+- Armaturenbrett : Das Verlaufsfenster behält seine Position / Abmessungen bei, wenn ein anderer Verlauf erneut geöffnet wird.
 - Befehlskonfigurationsfenster: Strg + Klick auf "Speichern" schließt das Fenster danach.
 - Gerätekonfigurationsfenster: Strg + Klick auf "Speichern" schließt das Fenster danach.
 - Fügen Sie beim Löschen eines Geräts Nutzungsinformationen hinzu.
@@ -432,7 +571,7 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 - Widgets : Ein numerisches Regeninfo-Widget wurde hinzugefügt (danke @thanaus)
 - Widgets : Anzeige des Info- / Action-Shutter-Widgets proportional zum Wert.<br/><br/>
 - Aufbau : Verbesserung und Reorganisation von Registerkarten.
-- Aufbau : Hinzufügung von vielen *Tooltips* (aide).
+- Aufbau : Hinzufügung von vielen *Kurzinfos* (aide).
 - Aufbau : Hinzufügen einer Suchmaschine.
 - Aufbau : Es wurde eine Schaltfläche hinzugefügt, um den Cache der Widgets zu leeren (Registerkarte Cache)).
 - Aufbau : Es wurde eine Option hinzugefügt, um den Cache von Widgets zu deaktivieren (Registerkarte Cache)).
@@ -441,9 +580,9 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 - Aufbau : Änderung von #message# beim #subject# in Konfiguration / Protokolle / Nachrichten, um das Duplizieren der Nachricht zu vermeiden.
 - Aufbau : Möglichkeit in den Zusammenfassungen, einen Ausschluss von Aufträgen hinzuzufügen, die nicht länger als XX Minuten aktualisiert wurden (Beispiel für die Berechnung von Temperaturdurchschnitten, wenn ein Sensor länger als 30 Minuten nichts gemeldet hat, wird er von der Berechnung ausgeschlossen)<br/><br/>
 - Szenario : Die Färbung von Blöcken erfolgt nicht mehr zufällig, sondern nach Blocktyp.
-- Szenario : Möglichkeit durch Strg + Klick auf die Schaltfläche *Ausführung* Speichern Sie es, starten Sie es und zeigen Sie das Protokoll an (wenn die Protokollebene nicht aktiviert ist *Nein*).
+- Szenario : Möglichkeit durch Strg + Klick auf die Schaltfläche *Ausführung* Speichern Sie es, starten Sie es und zeigen Sie das Protokoll an (wenn die Protokollebene nicht aktiviert ist *Irgendein*).
 - Szenario : Bestätigung der Blocklöschung. Strg + Klicken, um eine Bestätigung zu vermeiden.
-- Szenario : Hinzufügen einer Suchfunktion in Codeblöcken. Suche : Strg + F dann Enter, Nächstes Ergebnis : Strg + G, Vorheriges Ergebnis : Strg + Umschalt + G
+- Szenario : Hinzufügen einer Suchfunktion in Codeblöcken. Forschen : Strg + F dann Enter, Nächstes Ergebnis : Strg + G, Vorheriges Ergebnis : Strg + Umschalt + G
 - Szenario : Möglichkeit der Verdichtung der Blöcke.
 - Szenario : Die Aktion "Block hinzufügen" wechselt bei Bedarf zur Registerkarte "Szenario".
 - Szenario : Neue Funktionen zum Kopieren / Einfügen von Blöcken. Strg + Klicken zum Ausschneiden / Ersetzen.
@@ -462,7 +601,7 @@ Die Plugins müssen die Empfehlungen zur Baumstruktur von Ordnern und Dateien re
 - Zusammenfassung der Hausautomation : Hinzufügen von Geräten und Bestell-IDs zum Anzeigen und Suchen.
 - Zusammenfassung der Hausautomation : CSV-Export des übergeordneten Objekts, der ID, der Ausrüstung und ihrer ID, des Befehls.
 - Zusammenfassung der Hausautomation : Möglichkeit, einen oder mehrere Befehle sichtbar zu machen oder nicht.<br/><br/>
-- Design : Möglichkeit zur Angabe der Reihenfolge (Position) des *Designs* und *3D-Designs* (Bearbeiten, Design konfigurieren).
+- Design : Möglichkeit zur Angabe der Reihenfolge (Position) des *Entwürfe* und *3D-Designs* (Bearbeiten, Design konfigurieren).
 - Design : Hinzufügen eines benutzerdefinierten CSS-Felds zu den Elementen des *Design*.
 - Design : Die Anzeigeoptionen im Design der erweiterten Konfiguration wurden in den Anzeigeparametern aus dem verschoben *Design*. Dies, um die Schnittstelle zu vereinfachen und verschiedene Parameter durch zu ermöglichen *Design*.
 - Design : Verschieben und Ändern der Größe von Komponenten *Design* berücksichtigt ihre Größe mit oder ohne Magnetisierung.<br/><br/>

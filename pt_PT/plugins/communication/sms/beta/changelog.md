@@ -4,6 +4,18 @@
 >
 >Como lembrete, se não houver informações sobre a atualização, isso significa que se trata apenas da atualização da documentação, tradução ou texto
 
+# 06/11/2022
+
+- Adicionadas duas novas opções: **Permitir mensagens de números desconhecidos** & **Adicionar números desconhecidos automaticamente**; ver documentos.
+
+# 21/10/2022
+
+- Corrige um problema com algumas chaves gsm retornando caracteres incorretos ao iniciar o daemon.
+
+# 18/10/2022
+
+- Atualizar lista de comandos para Jeedom v4.3
+
 # 20/07/2022
 
 - Migrando daemon para python3

@@ -4,6 +4,18 @@
 >
 >Como recordatorio si no hay información sobre la actualización, significa que solo se refiere a la actualización de documentación, traducción o texto
 
+# 01/09/2023
+
+- Soporte para Debian11
+- Arreglar la ruta de importación
+
+
+# 27/11/2020
+
+- Optimizaciones generales
+- Nueva presentación de la lista de objetos
+- Adición de la etiqueta "compatibilidad V4"
+
 # 08-09-2019
 
 Soporte para php 7.3

@@ -4,6 +4,13 @@
 >
 >Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte
 
+# 10/01/2023
+
+- FUTURE APPV2 ALPHA INTEGRATION DANS PLUGIN MOBILE
+- Nouvelle Interface Future AppV2
+- Modale Custom Menu Future AppV2
+- Modale QrCode Future AppV2
+
 # 13/12/2021
 
 - Mode offline pour le QrCode (creation du QrCode sans internet.).

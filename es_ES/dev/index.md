@@ -14,8 +14,11 @@ Una [cuenta de desarrollador](https://blog.jeedom.com/jeedom-partenaire/) es nec
 - [Plantilla de complemento](/es_ES/dev/plugin_template)
 - [Dependencias de demonios y complementos](/es_ES/dev/daemon_plugin)
 
+- [Desarrollo js y core 4.4+](/es_ES/dev/corejs/index)
+
 ### Evoluciones principales y adaptaciones de complementos
 
+- [Núcleo v4.4](/es_ES/dev/core4.4)
 - [Core v4.3](/es_ES/dev/core4.3)
 - [Core v4.2](/es_ES/dev/core4.2)
 - [Core v4.1](/es_ES/dev/core4.1)

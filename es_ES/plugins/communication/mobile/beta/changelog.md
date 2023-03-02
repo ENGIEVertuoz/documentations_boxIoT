@@ -4,6 +4,13 @@
 >
 >Como recordatorio si no hay información sobre la actualización, significa que solo se refiere a la actualización de documentación, traducción o texto
 
+# 10/01/2023
+
+- FUTURA INTEGRACIÓN DE APPV2 ALPHA EN PLUGIN MÓVIL
+- Nueva interfaz Future AppV2
+- Menú personalizado modal Future AppV2
+- Modal QrCode Future AppV2
+
 # 13/12/2021
 
 - Modo sin conexión para QrCode (creación de QrCode sin Internet.).

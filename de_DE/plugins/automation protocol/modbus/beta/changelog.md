@@ -35,3 +35,17 @@
 # 26.09.2022
 
 - Neuer Timeout-Parameter zwischen Leseregister
+
+# 10.07.2022
+
+- Neues voraufgezeichnetes Modellsystem
+- ReadMultiRegisters-Option für Befehle
+
+# 13.10.2022
+
+- Option Schreibnachricht aktivieren/deaktivieren
+- NbBytes-Option, um die Aufteilung eines Registers in x Bytes festzulegen
+
+# 10.01.2023
+
+- Importpakete für Python 3.9 korrigiert
